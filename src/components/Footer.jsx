@@ -1,4 +1,5 @@
 import { ArrowUpRight } from '@phosphor-icons/react/dist/csr/ArrowUpRight'
+import { EnvelopeSimple } from '@phosphor-icons/react/dist/csr/EnvelopeSimple'
 import Logo from './Logo.jsx'
 import { serviceCategories } from '../data/services.js'
 import { site } from '../data/site.js'
@@ -22,6 +23,27 @@ const css = `
 }
 .site-footer .footer-brand p { margin: 16px 0; line-height: 1.6; font-size: 0.95rem; max-width: 26rem; }
 .site-footer .footer-art { display: block; width: 100%; max-width: 160px; height: auto; margin-top: 14px; opacity: 0.95; }
+
+/* Email addresses */
+.site-footer .footer-emails { display: grid; gap: 7px; margin: 4px 0 18px; }
+.site-footer .footer-emails__label {
+  color: rgba(226, 234, 255, 0.55);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.site-footer .footer-emails a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  width: fit-content;
+  padding-bottom: 1px;
+  color: #fff;
+  font-size: 0.9rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.22);
+}
+.site-footer .footer-emails a:hover { color: #ffd9a8; border-bottom-color: #ffd9a8; }
+.site-footer .footer-emails svg { flex: none; color: #f6a35c; }
 
 .site-footer h3 {
   margin: 0 0 14px;
@@ -95,6 +117,13 @@ export default function Footer() {
               IT support, software development, AI automation, and business systems — one
               partner for the technology that runs your business.
             </p>
+            <div className="footer-emails">
+              <span className="footer-emails__label">Email us</span>
+              <a href={`mailto:${site.email}`}>
+                <EnvelopeSimple size={16} aria-hidden="true" />
+                {site.email}
+              </a>
+            </div>
           </div>
 
           <div className="footer-col">

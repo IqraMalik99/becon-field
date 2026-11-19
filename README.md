@@ -34,10 +34,11 @@ navigating away from the page. The same shared form also appears on the Contact
 section of the homepage.
 
 When a valid request is submitted, the browser `POST`s it as JSON to
-`/api/contact`. A small Node server sends it to your inbox with **Nodemailer**
-over SMTP. The visitor's own email address is used as the reply-to, so replying
-in your inbox answers the visitor directly. The email address is never shown on
-the site.
+`/api/contact`. A small Node server sends it to **both inboxes** listed in
+`CONTACT_TO` with **Nodemailer** over SMTP. The visitor's own email address is
+used as the reply-to, so replying in your inbox answers the visitor directly.
+Only the business address (`Info@beacons-field.com`) is shown in the footer —
+the Gmail inbox is kept backend-only and is never rendered on the site.
 
 ### 1. Configure email (one-time)
 
@@ -52,10 +53,11 @@ SMTP_HOST=smtp.gmail.com
 SMTP_PORT=465
 SMTP_USER=im4356927@gmail.com
 SMTP_PASS=your-16-character-app-password
-CONTACT_TO=im4356927@gmail.com
+CONTACT_TO=im4356927@gmail.com,Info@beacons-field.com
 ```
 
-`.env` is git-ignored. Never commit real credentials.
+Separate additional recipients with commas — each one receives a copy of every
+request. `.env` is git-ignored. Never commit real credentials.
 
 ### 2. Run it
 
@@ -177,8 +179,10 @@ Admin requests send `Authorization: Bearer <token>`.
 
 ## Content and deployment notes
 
-- The recipient inbox is set with `CONTACT_TO` in `.env` (defaults to
-  `im4356927@gmail.com`). The address is never rendered on the site.
+- Consultation requests are delivered to every address in `CONTACT_TO` in `.env`
+  (defaults to `im4356927@gmail.com` and `Info@beacons-field.com`). Only
+  `Info@beacons-field.com` is rendered in the footer; the Gmail inbox is kept
+  backend-only.
 - Set `ADMIN_PASSWORD` to something private before going live, and deploy to a
   Node host with access to your MongoDB.
 - Service content is intentionally centralised in the category modules so the

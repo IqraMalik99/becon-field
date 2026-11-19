@@ -1,7 +1,16 @@
 import nodemailer from 'nodemailer'
 import { saveLead } from './db.js'
 
-const DEFAULT_TO = 'im4356927@gmail.com'
+// Every consultation request is delivered to both inboxes.
+const DEFAULT_TO = ['im4356927@gmail.com', 'Info@beacons-field.com']
+
+function parseRecipients(value) {
+  const list = String(value ?? '')
+    .split(/[;,]/)
+    .map((item) => item.trim())
+    .filter(Boolean)
+  return list.length ? list : [...DEFAULT_TO]
+}
 
 function readConfig(env = {}) {
   const port = Number(env.SMTP_PORT || 465)
@@ -11,7 +20,7 @@ function readConfig(env = {}) {
     secure: env.SMTP_SECURE ? env.SMTP_SECURE === 'true' : port === 465,
     user: env.SMTP_USER,
     pass: env.SMTP_PASS,
-    to: env.CONTACT_TO || env.SMTP_USER || DEFAULT_TO,
+    to: parseRecipients(env.CONTACT_TO),
   }
 }
 
