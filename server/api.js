@@ -39,9 +39,9 @@ function readJsonBody(req) {
   })
 }
 
-function requireAuth(req, res) {
+function requireAuth(req, res, env) {
   const token = tokenFromRequest(req)
-  if (!isValidSession(token)) {
+  if (!isValidSession(token, env)) {
     sendJson(res, 401, { ok: false, error: 'Please sign in.' })
     return null
   }
@@ -69,7 +69,7 @@ export async function handleApiRequest(req, res, env = process.env) {
       if (!checkPassword(password, env)) {
         return sendJson(res, 401, { ok: false, error: 'Incorrect password.' })
       }
-      return sendJson(res, 200, { ok: true, token: createSession() })
+      return sendJson(res, 200, { ok: true, token: createSession(env) })
     }
 
     if (path === '/api/admin/logout' && method === 'POST') {
@@ -78,7 +78,7 @@ export async function handleApiRequest(req, res, env = process.env) {
     }
 
     if (path === '/api/admin/leads' && method === 'GET') {
-      if (!requireAuth(req, res)) return
+      if (!requireAuth(req, res, env)) return
       const status = url.searchParams.get('status') || 'all'
       const [leads, all, pending, reviewed] = await Promise.all([
         listLeads(env, { status }),
@@ -95,7 +95,7 @@ export async function handleApiRequest(req, res, env = process.env) {
 
     const leadMatch = path.match(/^\/api\/admin\/leads\/([^/]+)$/)
     if (leadMatch) {
-      if (!requireAuth(req, res)) return
+      if (!requireAuth(req, res, env)) return
       const id = decodeURIComponent(leadMatch[1])
 
       if (method === 'PATCH' || method === 'PUT') {

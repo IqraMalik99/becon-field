@@ -157,6 +157,36 @@ Admin requests send `Authorization: Bearer <token>`.
 > Change `ADMIN_PASSWORD` before deploying anywhere public, and serve the site
 > over HTTPS so the password and token are encrypted in transit.
 
+## Deploying to Vercel
+
+`vercel.json` builds the Vite app to `dist/` and rewrites page routes to
+`index.html`, so `/admin` (and the service detail paths) work on a hard refresh.
+`api/[...path].js` exposes the existing Node backend as a serverless function at
+`/api/*`.
+
+Set these in **Vercel → Project → Settings → Environment Variables** (no `.env`
+file needs to be committed):
+
+| Variable | Value |
+|----------|-------|
+| `MONGODB_URI` | MongoDB Atlas connection string — local Docker Mongo is **not** reachable from Vercel |
+| `MONGODB_DB` | `becon_field` |
+| `SMTP_HOST` | `smtp.gmail.com` |
+| `SMTP_PORT` | `465` |
+| `SMTP_USER` | the Gmail account sending the mail |
+| `SMTP_PASS` | a Gmail App Password |
+| `CONTACT_TO` | `im4356927@gmail.com,Info@beacons-field.com` |
+| `ADMIN_PASSWORD` | a strong password for `/admin` |
+| `SESSION_SECRET` | any long random string used to sign admin tokens |
+
+Admin sessions are HMAC-signed and stateless, so a login remains valid across
+different serverless instances. Redeploy after adding the variables, then open
+`https://<your-project>.vercel.app/admin`.
+
+If Vercel shows a "Security Checkpoint" / "We're verifying your browser" page,
+wait a few seconds in a normal browser. If it persists, turn off Vercel's bot
+protection (or Deployment Protection) for the domain.
+
 ## Project structure
 
 - `server/` — the backend: `contact.js` (validation, MongoDB save, Nodemailer
