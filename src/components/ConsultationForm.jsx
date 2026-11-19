@@ -1,0 +1,338 @@
+import { useEffect, useRef, useState } from 'react'
+import { ArrowRight } from '@phosphor-icons/react/dist/csr/ArrowRight'
+import { CheckCircle } from '@phosphor-icons/react/dist/csr/CheckCircle'
+import { CaretDown } from '@phosphor-icons/react/dist/csr/CaretDown'
+import { consultationTimes, contactServiceOptions } from '../data/services.js'
+import {
+  createConsultationPayload,
+  localToday,
+  sendConsultation,
+  validateConsultation,
+} from '../lib/consultation.js'
+
+export default function ConsultationForm({
+  idPrefix = 'consultation',
+  initialService = '',
+  initialDetails = '',
+  requestedService = '',
+  submitLabel = 'Book My Free Consultation',
+  compact = false,
+  onClose,
+  className = '',
+}) {
+  const [service, setService] = useState(initialService)
+  const [details, setDetails] = useState(initialDetails)
+  const [errors, setErrors] = useState({})
+  const [status, setStatus] = useState('idle')
+  const [showMore, setShowMore] = useState(false)
+  const [formKey, setFormKey] = useState(0)
+  const formRef = useRef(null)
+  const successRef = useRef(null)
+  const shouldFocusForm = useRef(false)
+  const shouldFocusError = useRef(false)
+
+  useEffect(() => {
+    if (status === 'success') {
+      successRef.current?.focus()
+    }
+  }, [status])
+
+  useEffect(() => {
+    if (!shouldFocusError.current) return
+    shouldFocusError.current = false
+    const firstError = ['name', 'email', 'service', 'date'].find((name) => errors[name])
+    if (!firstError) return
+    document.getElementById(`${idPrefix}-${firstError}`)?.focus()
+  }, [errors, idPrefix])
+
+  useEffect(() => {
+    if (!shouldFocusForm.current) return
+    shouldFocusForm.current = false
+    const firstField = formRef.current?.querySelector(
+      'input:not([type="hidden"]), select, textarea',
+    )
+    firstField?.focus()
+  }, [formKey])
+
+  const resetForm = () => {
+    shouldFocusForm.current = true
+    setStatus('idle')
+    setErrors({})
+    setService(initialService)
+    setDetails(initialDetails)
+    setShowMore(false)
+    setFormKey((key) => key + 1)
+  }
+
+  const handleSubmit = async (event) => {
+    event.preventDefault()
+    const form = event.currentTarget
+    const data = Object.fromEntries(new FormData(form).entries())
+
+    if (data.website) return
+
+    const nextErrors = validateConsultation({
+      name: data.name,
+      email: data.email,
+      service,
+      date: data.date,
+    })
+
+    setErrors(nextErrors)
+    if (Object.keys(nextErrors).length > 0) {
+      if (nextErrors.date) setShowMore(true)
+      shouldFocusError.current = true
+      return
+    }
+
+    const payload = createConsultationPayload(data, service, details)
+    setStatus('submitting')
+
+    try {
+      await sendConsultation(payload)
+
+      setStatus('success')
+      form.reset()
+      setService('')
+      setDetails('')
+      setFormKey((key) => key + 1)
+    } catch (error) {
+      console.error(error)
+      setStatus('error')
+    }
+  }
+
+  if (status === 'success') {
+    return (
+      <div
+        className={`form-success${compact ? ' form-success--compact' : ''}`}
+        role="status"
+        aria-live="polite"
+        ref={successRef}
+        tabIndex={-1}
+      >
+        <span className="form-success__icon" aria-hidden="true">
+          <CheckCircle size={30} />
+        </span>
+        <h2>Request received.</h2>
+        <p>
+          Thanks — we have your details. If it is a fit for us, we get back to you soon.
+        </p>
+        <div className="form-success__actions">
+          <button type="button" className="btn btn--dark" onClick={resetForm}>
+            Send another request
+          </button>
+          {onClose && (
+            <button type="button" className="btn btn--outline" onClick={onClose}>
+              Close
+            </button>
+          )}
+        </div>
+      </div>
+    )
+  }
+
+  const fieldId = (name) => `${idPrefix}-${name}`
+  const errorId = (name) => `${idPrefix}-${name}-error`
+
+  return (
+    <form
+      className={`contact-form${compact ? ' contact-form--compact' : ''} glass-form${className ? ` ${className}` : ''}`}
+      key={formKey}
+      ref={formRef}
+      onSubmit={handleSubmit}
+      noValidate
+    >
+      {requestedService && (
+        <div className="request-notice">
+          <CheckCircle size={18} aria-hidden="true" />
+          <p>
+            Requesting: <strong>{requestedService}</strong>
+            {service && service !== requestedService ? (
+              <span> — matched to {service} in the form below.</span>
+            ) : null}
+          </p>
+        </div>
+      )}
+
+      <div className="form-row">
+        <div className={`field${errors.name ? ' has-error' : ''}`}>
+          <label htmlFor={fieldId('name')}>
+            Name <span className="req">*</span>
+          </label>
+          <input
+            id={fieldId('name')}
+            name="name"
+            type="text"
+            autoComplete="name"
+            required
+            aria-invalid={Boolean(errors.name)}
+            aria-describedby={errors.name ? errorId('name') : undefined}
+          />
+          {errors.name && (
+            <p className="field-error" id={errorId('name')}>
+              {errors.name}
+            </p>
+          )}
+        </div>
+
+        <div className={`field${errors.email ? ' has-error' : ''}`}>
+          <label htmlFor={fieldId('email')}>
+            Email <span className="req">*</span>
+          </label>
+          <input
+            id={fieldId('email')}
+            name="email"
+            type="email"
+            autoComplete="email"
+            required
+            aria-invalid={Boolean(errors.email)}
+            aria-describedby={errors.email ? errorId('email') : undefined}
+          />
+          {errors.email && (
+            <p className="field-error" id={errorId('email')}>
+              {errors.email}
+            </p>
+          )}
+        </div>
+      </div>
+
+      <div className={`field${errors.service ? ' has-error' : ''}`}>
+        <label htmlFor={fieldId('service')}>
+          Service Required <span className="req">*</span>
+        </label>
+        <select
+          id={fieldId('service')}
+          name="service"
+          value={service}
+          onChange={(event) => {
+            setService(event.target.value)
+            if (errors.service) {
+              setErrors((current) => ({ ...current, service: '' }))
+            }
+          }}
+          required
+          aria-invalid={Boolean(errors.service)}
+          aria-describedby={errors.service ? errorId('service') : undefined}
+        >
+          <option value="">Select a service</option>
+          {contactServiceOptions.map((option) => (
+            <option key={option} value={option}>
+              {option}
+            </option>
+          ))}
+        </select>
+        {errors.service && (
+          <p className="field-error" id={errorId('service')}>
+            {errors.service}
+          </p>
+        )}
+      </div>
+
+      <button
+        type="button"
+        className="form-more"
+        aria-expanded={showMore}
+        aria-controls={`${idPrefix}-more`}
+        onClick={() => setShowMore((open) => !open)}
+      >
+        {showMore ? 'Hide extra details' : 'Add phone, date & time (optional)'}
+        <CaretDown size={16} aria-hidden="true" className="form-more__chevron" />
+      </button>
+
+      <div className="form-more__region" id={`${idPrefix}-more`} hidden={!showMore}>
+        <div className="form-row">
+          <div className="field">
+            <label htmlFor={fieldId('phone')}>Phone Number</label>
+            <input
+              id={fieldId('phone')}
+              name="phone"
+              type="tel"
+              autoComplete="tel"
+              placeholder="Include your country code if relevant"
+            />
+          </div>
+
+          <div className={`field${errors.date ? ' has-error' : ''}`}>
+            <label htmlFor={fieldId('date')}>Preferred Consultation Date</label>
+            <input
+              id={fieldId('date')}
+              name="date"
+              type="date"
+              min={localToday()}
+              aria-invalid={Boolean(errors.date)}
+              aria-describedby={errors.date ? errorId('date') : undefined}
+            />
+            {errors.date && (
+              <p className="field-error" id={errorId('date')}>
+                {errors.date}
+              </p>
+            )}
+          </div>
+        </div>
+
+        <div className="form-row">
+          <div className="field">
+            <label htmlFor={fieldId('time')}>Preferred Consultation Time</label>
+            <select id={fieldId('time')} name="time" defaultValue="">
+              <option value="">Any time</option>
+              {consultationTimes.map((time) => (
+                <option key={time} value={time}>
+                  {time}
+                </option>
+              ))}
+            </select>
+          </div>
+        </div>
+
+        <div className="field">
+          <label htmlFor={fieldId('details')}>Project details (optional)</label>
+          <textarea
+            id={fieldId('details')}
+            name="details"
+            rows="2"
+            value={details}
+            onChange={(event) => setDetails(event.target.value)}
+            placeholder="What is not working, what you are planning, or what you would like to improve?"
+          />
+        </div>
+      </div>
+
+      <div className="hp-field" aria-hidden="true">
+        <label htmlFor={fieldId('website')}>Website</label>
+        <input
+          id={fieldId('website')}
+          name="website"
+          type="text"
+          tabIndex="-1"
+          autoComplete="off"
+        />
+      </div>
+
+      {status === 'error' && (
+        <div className="form-alert" role="alert">
+          <strong>Something went wrong sending the form.</strong> Please try again in a
+          moment.
+        </div>
+      )}
+
+      <button
+        type="submit"
+        className="btn btn--primary contact-submit"
+        disabled={status === 'submitting'}
+      >
+        {status === 'submitting' ? (
+          'Sending request…'
+        ) : (
+          <>
+            {submitLabel} <ArrowRight size={17} aria-hidden="true" />
+          </>
+        )}
+      </button>
+
+      <p className="form-note">
+        We only use your details to reply to you. No obligation, no mailing list.
+      </p>
+    </form>
+  )
+}

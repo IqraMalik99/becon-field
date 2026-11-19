@@ -1,0 +1,278 @@
+@media (max-width: 1120px) {
+  .solutions-grid,
+  .why-grid,
+  .testimonials-grid,
+  .faq-grid,
+  .about-story__grid,
+  .about-working__grid,
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .faq-intro {
+    position: static;
+  }
+
+  .principles-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .footer-top {
+    grid-template-columns: 1.4fr 1fr 1fr;
+    gap: 36px;
+  }
+
+  .footer-col--cta {
+    grid-column: 1 / -1;
+    max-width: 520px;
+  }
+
+  .detail-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .detail-aside {
+    position: static;
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+  }
+
+  .detail-aside .aside-note {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 1024px) {
+  .nav {
+    display: none;
+  }
+
+  .menu-toggle {
+    display: grid;
+  }
+
+  .header-inner {
+    gap: 16px;
+  }
+
+  .hero__inner {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .hero__form {
+    display: none;
+  }
+
+  .hero__consultation-btn {
+    display: inline-flex;
+  }
+
+  .hero h1 {
+    max-width: 15ch;
+  }
+
+  .hero__visual {
+    width: 100%;
+    max-width: 640px;
+    margin-inline: auto;
+  }
+
+  .category-head {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  .category-head--flip .category-head__copy {
+    order: 1;
+  }
+
+  .category-head--flip .category-art {
+    order: 2;
+  }
+
+  .category-art {
+    max-width: 640px;
+  }
+}
+
+@media (max-width: 900px) {
+  .cat-grid,
+  .project-grid,
+  .solution-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .service-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .benefit-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .tech-row {
+    grid-template-columns: 150px 1fr;
+    gap: 20px;
+  }
+}
+
+@media (max-width: 720px) {
+  .container {
+    width: calc(100% - 32px);
+  }
+
+  .header-cta {
+    display: none;
+  }
+
+  .logo__tag {
+    display: none;
+  }
+
+  .hero {
+    padding-top: 56px;
+  }
+
+  .hero h1 {
+    font-size: clamp(1.7rem, 8.5vw, 2.3rem);
+    max-width: none;
+  }
+
+  .hero__actions,
+  .page-hero__actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .hero__actions .btn,
+  .page-hero__actions .btn {
+    width: 100%;
+  }
+
+  .hero__points {
+    display: grid;
+    gap: 10px;
+  }
+
+  .cat-grid,
+  .project-grid,
+  .solution-cards,
+  .principles-grid,
+  .why-list,
+  .approach-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .section-head h2,
+  .category-head h2 {
+    max-width: none;
+  }
+
+  .tech-row {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .footer-top {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-col--cta {
+    grid-column: auto;
+  }
+
+  .footer-bottom {
+    margin-top: 40px;
+  }
+
+  .cta-band__actions {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+  }
+
+  .cta-band__actions .btn {
+    width: 100%;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .include-list {
+    grid-template-columns: 1fr;
+  }
+
+  .detail-aside {
+    grid-template-columns: 1fr;
+  }
+
+  .problem-row {
+    grid-template-columns: 1fr;
+    gap: 6px;
+    padding: 18px 0;
+  }
+
+  .problem-row__arrow {
+    display: none;
+  }
+
+  .approach-note {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .services-jump__label {
+    display: none;
+  }
+
+  .contact-panel {
+    padding: 22px;
+  }
+
+  .service-card__actions {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo__name {
+    font-size: 0.92rem;
+  }
+
+  .logo__mark {
+    width: 38px;
+    height: 38px;
+  }
+
+  .section {
+    padding: 40px 0;
+  }
+
+  .page-hero h1 {
+    font-size: clamp(1.7rem, 8vw, 2.2rem);
+  }
+
+  .section-head h2 {
+    font-size: clamp(1.45rem, 6vw, 1.9rem);
+  }
+
+  .testimonial-card {
+    padding: 24px;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+  }
+
+  .contact-form {
+    padding: 20px;
+  }
+
+  .category-art {
+    padding: 12px;
+  }
+}
