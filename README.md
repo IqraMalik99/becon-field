@@ -180,7 +180,9 @@ file needs to be committed):
 | `SESSION_SECRET` | any long random string used to sign admin tokens |
 
 Admin sessions are HMAC-signed and stateless, so a login remains valid across
-different serverless instances. Redeploy after adding the variables, then open
+different serverless instances. In MongoDB Atlas, add `0.0.0.0/0` (or Vercel's
+IP ranges) under **Network Access**, otherwise the serverless function cannot
+reach the cluster. Redeploy after adding the variables, then open
 `https://<your-project>.vercel.app/admin`.
 
 If Vercel shows a "Security Checkpoint" / "We're verifying your browser" page,

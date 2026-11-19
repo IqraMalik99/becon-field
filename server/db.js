@@ -33,8 +33,11 @@ export async function getDb(env = {}) {
       .catch((error) => {
         clientPromise = null
         cachedUri = null
+        // Log details server-side only — never include the URI in a response,
+        // because it can contain database credentials.
+        console.error('[db] connection failed:', error.message)
         const friendly = new Error(
-          `Cannot reach the database at ${uri}. Is MongoDB running? (${error.message})`,
+          'Cannot reach the database. Check MONGODB_URI and MongoDB network access.',
         )
         friendly.statusCode = 503
         throw friendly
