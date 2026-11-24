@@ -1,7 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import { ArrowRight } from '@phosphor-icons/react/dist/csr/ArrowRight'
 import { CheckCircle } from '@phosphor-icons/react/dist/csr/CheckCircle'
-import { CaretDown } from '@phosphor-icons/react/dist/csr/CaretDown'
 import { consultationTimes, contactServiceOptions } from '../data/services.js'
 import {
   createConsultationPayload,
@@ -24,7 +23,6 @@ export default function ConsultationForm({
   const [details, setDetails] = useState(initialDetails)
   const [errors, setErrors] = useState({})
   const [status, setStatus] = useState('idle')
-  const [showMore, setShowMore] = useState(false)
   const [formKey, setFormKey] = useState(0)
   const formRef = useRef(null)
   const successRef = useRef(null)
@@ -60,7 +58,6 @@ export default function ConsultationForm({
     setErrors({})
     setService(initialService)
     setDetails(initialDetails)
-    setShowMore(false)
     setFormKey((key) => key + 1)
   }
 
@@ -80,7 +77,6 @@ export default function ConsultationForm({
 
     setErrors(nextErrors)
     if (Object.keys(nextErrors).length > 0) {
-      if (nextErrors.date) setShowMore(true)
       shouldFocusError.current = true
       return
     }
@@ -142,7 +138,7 @@ export default function ConsultationForm({
 
   return (
     <form
-      className={`contact-form${compact ? ' contact-form--compact' : ''} glass-form${className ? ` ${className}` : ''}`}
+      className={`contact-form${compact ? ' contact-form--compact' : ''}${className ? ` ${className}` : ''}`}
       key={formKey}
       ref={formRef}
       onSubmit={handleSubmit}
@@ -160,10 +156,15 @@ export default function ConsultationForm({
         </div>
       )}
 
+      <p className="form-intro">
+        Fields marked <span className="req">*</span> are required. The rest are optional — filling
+        them helps us reply faster.
+      </p>
+
       <div className="form-row">
         <div className={`field${errors.name ? ' has-error' : ''}`}>
           <label htmlFor={fieldId('name')}>
-            Name <span className="req">*</span>
+            Your name <span className="req">*</span>
           </label>
           <input
             id={fieldId('name')}
@@ -183,7 +184,7 @@ export default function ConsultationForm({
 
         <div className={`field${errors.email ? ' has-error' : ''}`}>
           <label htmlFor={fieldId('email')}>
-            Email <span className="req">*</span>
+            Email address <span className="req">*</span>
           </label>
           <input
             id={fieldId('email')}
@@ -204,7 +205,7 @@ export default function ConsultationForm({
 
       <div className={`field${errors.service ? ' has-error' : ''}`}>
         <label htmlFor={fieldId('service')}>
-          Service Required <span className="req">*</span>
+          Service needed <span className="req">*</span>
         </label>
         <select
           id={fieldId('service')}
@@ -234,103 +235,93 @@ export default function ConsultationForm({
         )}
       </div>
 
-      <button
-        type="button"
-        className="form-more"
-        aria-expanded={showMore}
-        aria-controls={`${idPrefix}-more`}
-        onClick={() => setShowMore((open) => !open)}
-      >
-        {showMore ? 'Hide extra details' : 'Add phone, date & time (optional)'}
-        <CaretDown size={16} aria-hidden="true" className="form-more__chevron" />
-      </button>
-
-      <div className="form-more__region" id={`${idPrefix}-more`} hidden={!showMore}>
-        <div className="form-row">
-          <div className="field phone-field">
-            <label className="phone-field__label" htmlFor={fieldId('phone')}>
-              Phone Number
-            </label>
-            <div className="phone-group">
-              <div className="phone-group__box phone-group__box--code">
-                <span className="phone-group__caption" aria-hidden="true">
-                  Code
-                </span>
-                <select
-                  className="phone-group__code"
-                  name="countryCode"
-                  aria-label="Country code"
-                  defaultValue="+1"
-                >
-                  <option value="+1">+1 US/CA</option>
-                  <option value="+44">+44 UK</option>
-                  <option value="+91">+91 IN</option>
-                  <option value="+92">+92 PK</option>
-                  <option value="+61">+61 AU</option>
-                  <option value="+971">+971 AE</option>
-                  <option value="+49">+49 DE</option>
-                  <option value="+33">+33 FR</option>
-                </select>
-              </div>
-              <div className="phone-group__box phone-group__box--number">
-                <span className="phone-group__caption" aria-hidden="true">
-                  Number
-                </span>
-                <input
-                  id={fieldId('phone')}
-                  className="phone-group__number"
-                  name="phone"
-                  type="number"
-                  inputMode="numeric"
-                  min="0"
-                  autoComplete="tel-national"
-                  placeholder="501 251 8031"
-                />
-              </div>
+      <div className="form-row">
+        <div className="field phone-field">
+          <label className="phone-field__label" htmlFor={fieldId('phone')}>
+            Phone number <span className="opt">Optional</span>
+          </label>
+          <div className="phone-group">
+            <div className="phone-group__box phone-group__box--code">
+              <span className="phone-group__caption" aria-hidden="true">
+                Code
+              </span>
+              <select
+                className="phone-group__code"
+                name="countryCode"
+                aria-label="Country code"
+                defaultValue="+1"
+              >
+                <option value="+1">+1 US/CA</option>
+                <option value="+44">+44 UK</option>
+                <option value="+91">+91 IN</option>
+                <option value="+92">+92 PK</option>
+                <option value="+61">+61 AU</option>
+                <option value="+971">+971 AE</option>
+                <option value="+49">+49 DE</option>
+                <option value="+33">+33 FR</option>
+              </select>
+            </div>
+            <div className="phone-group__box phone-group__box--number">
+              <span className="phone-group__caption" aria-hidden="true">
+                Number
+              </span>
+              <input
+                id={fieldId('phone')}
+                className="phone-group__number"
+                name="phone"
+                type="number"
+                inputMode="numeric"
+                min="0"
+                autoComplete="tel-national"
+              />
             </div>
           </div>
-
-          <div className={`field${errors.date ? ' has-error' : ''}`}>
-            <label htmlFor={fieldId('date')}>Preferred Consultation Date</label>
-            <input
-              id={fieldId('date')}
-              name="date"
-              type="date"
-              min={localToday()}
-              aria-invalid={Boolean(errors.date)}
-              aria-describedby={errors.date ? errorId('date') : undefined}
-            />
-            {errors.date && (
-              <p className="field-error" id={errorId('date')}>
-                {errors.date}
-              </p>
-            )}
-          </div>
         </div>
 
-        <div className="form-row">
-          <div className="field">
-            <label htmlFor={fieldId('time')}>Preferred Consultation Time</label>
-            <select id={fieldId('time')} name="time" defaultValue="">
-              <option value="">Any time</option>
-              {consultationTimes.map((time) => (
-                <option key={time} value={time}>
-                  {time}
-                </option>
-              ))}
-            </select>
-          </div>
+        <div className={`field${errors.date ? ' has-error' : ''}`}>
+          <label htmlFor={fieldId('date')}>
+            Preferred date <span className="opt">Optional</span>
+          </label>
+          <input
+            id={fieldId('date')}
+            name="date"
+            type="date"
+            min={localToday()}
+            aria-invalid={Boolean(errors.date)}
+            aria-describedby={errors.date ? errorId('date') : undefined}
+          />
+          {errors.date && (
+            <p className="field-error" id={errorId('date')}>
+              {errors.date}
+            </p>
+          )}
         </div>
+      </div>
 
+      <div className="form-row">
         <div className="field">
-          <label htmlFor={fieldId('details')}>Project details (optional)</label>
+          <label htmlFor={fieldId('time')}>
+            Preferred time <span className="opt">Optional</span>
+          </label>
+          <select id={fieldId('time')} name="time" defaultValue="">
+            <option value="">Any time</option>
+            {consultationTimes.map((time) => (
+              <option key={time} value={time}>
+                {time}
+              </option>
+            ))}
+          </select>
+        </div>
+        <div className="field">
+          <label htmlFor={fieldId('details')}>
+            Project details <span className="opt">Optional</span>
+          </label>
           <textarea
             id={fieldId('details')}
             name="details"
             rows="2"
             value={details}
             onChange={(event) => setDetails(event.target.value)}
-            placeholder="What is not working, what you are planning, or what you would like to improve?"
           />
         </div>
       </div>
