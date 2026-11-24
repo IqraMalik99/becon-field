@@ -5,7 +5,7 @@ import { serviceCategories } from '../data/services.js'
 import { site } from '../data/site.js'
 import { useConsultation } from '../context/consultationContext.js'
 
-const year = new Date().getFullYear()
+const year = 2024
 
 /* Inline CSS: dark grey footer + silver glass "Start a project" card */
 const css = `
@@ -155,7 +155,7 @@ export default function Footer() {
             <ul>
               {serviceCategories.map((category) => (
                 <li key={category.slug}>
-                  <a href="#services">{category.shortName}</a>
+                  <a href="#services">{category.name}</a>
                 </li>
               ))}
             </ul>
