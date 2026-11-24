@@ -156,11 +156,6 @@ export default function ConsultationForm({
         </div>
       )}
 
-      <p className="form-intro">
-        Fields marked <span className="req">*</span> are required. The rest are optional — filling
-        them helps us reply faster.
-      </p>
-
       <div className="form-row">
         <div className={`field${errors.name ? ' has-error' : ''}`}>
           <label htmlFor={fieldId('name')}>
@@ -238,7 +233,7 @@ export default function ConsultationForm({
       <div className="form-row">
         <div className="field phone-field">
           <label className="phone-field__label" htmlFor={fieldId('phone')}>
-            Phone number <span className="opt">Optional</span>
+            Phone number
           </label>
           <div className="phone-group">
             <div className="phone-group__box phone-group__box--code">
@@ -280,7 +275,7 @@ export default function ConsultationForm({
 
         <div className={`field${errors.date ? ' has-error' : ''}`}>
           <label htmlFor={fieldId('date')}>
-            Preferred date <span className="opt">Optional</span>
+            Preferred date
           </label>
           <input
             id={fieldId('date')}
@@ -301,7 +296,7 @@ export default function ConsultationForm({
       <div className="form-row">
         <div className="field">
           <label htmlFor={fieldId('time')}>
-            Preferred time <span className="opt">Optional</span>
+            Preferred time
           </label>
           <select id={fieldId('time')} name="time" defaultValue="">
             <option value="">Any time</option>
@@ -314,7 +309,7 @@ export default function ConsultationForm({
         </div>
         <div className="field">
           <label htmlFor={fieldId('details')}>
-            Project details <span className="opt">Optional</span>
+            Project details
           </label>
           <textarea
             id={fieldId('details')}
@@ -357,10 +352,6 @@ export default function ConsultationForm({
           </>
         )}
       </button>
-
-      <p className="form-note">
-        We only use your details to reply to you. No obligation, no mailing list.
-      </p>
     </form>
   )
 }

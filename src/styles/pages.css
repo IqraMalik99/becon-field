@@ -907,21 +907,19 @@
   background: #e9e9e9;
   border: 1px solid #cfcfcf;
   border-radius: var(--radius-lg);
-  padding: clamp(16px, 2.6vw, 26px);
+  padding: clamp(18px, 2.8vw, 28px);
   box-shadow: 0 20px 44px -24px rgba(0, 0, 0, 0.65);
   display: grid;
-  gap: 14px;
+  gap: 16px;
   color: #111111;
 }
 
 .contact-form .field {
-  gap: 6px;
+  gap: 8px;
 }
 
-.contact-form .form-intro,
 .contact-form .field label,
 .contact-form .phone-group__caption,
-.contact-form .form-note,
 .contact-form .request-notice,
 .contact-form .request-notice span {
   color: #333333;
@@ -933,15 +931,11 @@
   color: var(--red);
 }
 
-.contact-form .opt {
-  color: #777777;
-}
-
 .contact-form .field input,
 .contact-form .field select,
 .contact-form .field textarea {
-  min-height: 42px;
-  padding: 10px 12px;
+  min-height: 44px;
+  padding: 11px 13px;
   color: #111111;
   background: #ffffff;
   border: 1px solid #cfcfcf;
@@ -1030,23 +1024,7 @@
 .form-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 12px;
-}
-
-.form-intro {
-  margin: 0;
-  color: #ffffff;
-  font-size: 0.76rem;
-  line-height: 1.5;
-}
-
-.opt {
-  margin-left: 6px;
-  color: rgba(255, 255, 255, 0.68);
-  font-size: 0.66rem;
-  font-weight: 700;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
+  gap: 14px;
 }
 
 .field {
@@ -1184,13 +1162,6 @@
   transform: none;
 }
 
-.form-note {
-  font-size: 0.72rem;
-  color: #ffffff;
-  line-height: 1.6;
-  text-align: center;
-}
-
 .hp-field {
   position: absolute;
   left: -9999px;
@@ -1291,8 +1262,8 @@
 }
 
 .contact-form--compact {
-  padding: 16px;
-  gap: 12px;
+  padding: 18px;
+  gap: 14px;
 }
 
 .contact-aside {

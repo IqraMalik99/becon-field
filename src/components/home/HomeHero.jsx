@@ -91,15 +91,7 @@ html, body, #root { background: var(--dark); }
 .modal__head p { color: var(--text-soft); font-size: 0.95rem; line-height: 1.5; }
 .modal__head .eyebrow { color: var(--silver); }
 
-/* ---------- HERO FORM: heading on dark, clean silver form below ---------- */
-.hero__form {
-  width: 100%;
-  max-width: 400px;
-  justify-self: end;
-}
-.hero__form .hero-form__head { margin-bottom: 14px; }
-.hero__form .hero-form__head h2 { margin: 0 0 4px; font-size: 1.2rem; color: #ffffff; }
-.hero__form .hero-form__head p { margin: 0; font-size: 0.85rem; line-height: 1.45; color: #ffffff; }
+/* ---------- HERO FORM: grey card styling lives in home.css ---------- */
 
 /* ---------- CAPABILITY STRIP: dark surface, silver text ---------- */
 .cap-strip {
@@ -119,7 +111,6 @@ html, body, #root { background: var(--dark); }
 /* ---------- MOBILE ---------- */
 @media (max-width: 900px) {
   .hero__inner { grid-template-columns: 1fr; }
-  .hero__form { justify-self: stretch; max-width: 460px; }
 }
 @media (max-width: 520px) {
   .hero__actions .btn { width: 100%; justify-content: center; }
