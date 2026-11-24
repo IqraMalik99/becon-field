@@ -1,15 +1,15 @@
 import itSupport from './categories/it-support.js'
-import webSoftware from './categories/web-software.js'
-import mobileApps from './categories/mobile-apps.js'
-import aiAutomation from './categories/ai-automation.js'
 import cybersecurity from './categories/cybersecurity-maintenance.js'
+import aiAutomation from './categories/ai-automation.js'
+import mobileApps from './categories/mobile-apps.js'
+import webSoftware from './categories/web-software.js'
 
 export const serviceCategories = [
   itSupport,
-  webSoftware,
-  mobileApps,
-  aiAutomation,
   cybersecurity,
+  aiAutomation,
+  mobileApps,
+  webSoftware,
 ]
 
 export const allServices = serviceCategories.flatMap((category) =>
@@ -37,16 +37,16 @@ export const contactServiceOptions = [
   'Network Support',
   'Software Installation & Upgrades',
   'Remote IT Support',
+  'Cybersecurity',
+  'Monthly IT Maintenance',
+  'AI Chatbot Development',
+  'AI Voice Agents',
+  'Workflow Automation',
+  'Mobile App Development',
   'Website Development',
   'Web Application Development',
   'Custom Software Development',
   'API Development & Integration',
-  'Mobile App Development',
-  'AI Chatbot Development',
-  'AI Voice Agents',
-  'Workflow Automation',
-  'Cybersecurity',
-  'Monthly IT Maintenance',
   'Other / Custom Requirements',
 ]
 
