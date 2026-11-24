@@ -10,7 +10,7 @@ const phoneHref = 'tel:+15012518031'
 const css = `
 .site-header,
 .site-header.is-scrolled {
-  background: rgba(0, 0, 0, 0.94);
+  background: rgba(var(--dark-rgb), 0.94);
   border-bottom: 1px solid rgba(200, 200, 200, 0.12);
   box-shadow: none;
   backdrop-filter: blur(18px);

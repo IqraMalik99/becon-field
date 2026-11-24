@@ -13,10 +13,10 @@ const heroPoints = [
 const css = `
 :root {
   --cream: #ffffff;
-  --navy-950: #080a0d;
-  --navy-900: #0a0a0a;
-  --navy-800: #141414;
-  --navy-700: #2b333d;
+  --navy-950: var(--dark);
+  --navy-900: var(--surface);
+  --navy-800: var(--surface);
+  --navy-700: var(--surface);
   --ink: #ffffff;
   --ink-soft: #ffffff;
   --text-soft: #ffffff;
@@ -96,7 +96,7 @@ html, body, #root { background: var(--dark); }
   color: #fff;
 }
 .contact-form.glass-form { padding: 0; background: transparent; border: 0; box-shadow: none; backdrop-filter: none; }
-.modal__dialog.glass-form { background: rgba(10, 10, 10, 0.96); }
+.modal__dialog.glass-form { background: rgba(var(--surface-rgb), 0.96); }
 
 .modal__head h2 { margin: 8px 0 6px; font-size: 1.5rem; color: #fff; }
 .modal__head p { color: var(--text-soft); font-size: 0.95rem; line-height: 1.5; }
@@ -183,7 +183,7 @@ html, body, #root { background: var(--dark); }
   justify-self: end;
   padding: 20px 22px;
   color: var(--ink);
-  background: rgba(20, 20, 20, 0.82);
+  background: rgba(var(--surface-rgb), 0.82);
   border: 1px solid rgba(200, 200, 200, 0.24);
   border-radius: 18px;
   box-shadow: 0 18px 44px rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.06);

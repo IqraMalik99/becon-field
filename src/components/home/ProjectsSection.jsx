@@ -61,7 +61,7 @@ const css = `
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  background: #141414;
+  background: var(--surface);
   border: 1px solid rgba(200, 200, 200, 0.2);
   border-radius: 18px;
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
@@ -69,14 +69,15 @@ const css = `
 }
 .project-card:hover { transform: translateY(-4px); border-color: rgba(200, 200, 200, 0.55); box-shadow: 0 18px 38px rgba(0, 0, 0, 0.45); }
 
-.project-card__visual { position: relative; aspect-ratio: 16 / 10; overflow: hidden; background: #0f0f0f; }
+.project-card__visual { position: relative; aspect-ratio: 16 / 10; overflow: hidden; background: var(--surface); }
 .project-card__visual img { display: block; width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease; }
 .project-card:hover .project-card__visual img { transform: scale(1.05); }
 .project-card__visual::after {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0.45) 0%, rgba(0, 0, 0, 0.05) 42%, rgba(0, 0, 0, 0.65) 100%);
+  background: var(--dark);
+  opacity: 0.55;
   pointer-events: none;
 }
 .project-card__overlay {
@@ -97,7 +98,7 @@ const css = `
   font-weight: 800;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  background: rgba(0, 0, 0, 0.68);
+  background: rgba(var(--dark-rgb), 0.68);
   border: 1px solid rgba(255, 255, 255, 0.4);
   border-radius: 999px;
   backdrop-filter: blur(6px);

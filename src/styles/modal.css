@@ -5,7 +5,7 @@
   display: grid;
   place-items: center;
   padding: 24px;
-  background: rgba(0, 0, 0, 0.76);
+  background: rgba(var(--dark-rgb), 0.76);
   backdrop-filter: blur(6px);
   animation: modal-fade 0.2s ease both;
 }

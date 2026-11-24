@@ -497,7 +497,7 @@
   height: 52px;
   border-radius: 50%;
   border: 1px solid rgba(200, 200, 200, 0.28);
-  background: rgba(10, 10, 10, 0.92);
+  background: rgba(var(--surface-rgb), 0.92);
   color: var(--silver);
   text-decoration: none;
   backdrop-filter: blur(14px);

@@ -2,10 +2,12 @@
   /* Jet black, grey and silver palette */
   --dark: #000000;
   --surface: #0a0a0a;
-  --surface-2: #141414;
-  --surface-3: #222222;
-  --primary: #050505;
-  --secondary: #333333;
+  --dark-rgb: 0, 0, 0;
+  --surface-rgb: 10, 10, 10;
+  --surface-2: var(--surface);
+  --surface-3: var(--surface);
+  --primary: var(--dark);
+  --secondary: var(--dark);
   --silver: #ffffff;
   --accent: #ffffff;
   --accent-bright: #ffffff;
