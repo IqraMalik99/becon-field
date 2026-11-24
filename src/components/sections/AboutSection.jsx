@@ -43,22 +43,6 @@ const css = `
   background: var(--red);
   border-radius: 2px;
 }
-.about-location {
-  display: inline-flex;
-  align-items: center;
-  gap: 7px;
-  color: var(--white);
-  font-size: 0.78rem;
-  font-weight: 600;
-  letter-spacing: 0.02em;
-}
-.about-location::before {
-  content: '';
-  width: 5px;
-  height: 5px;
-  background: var(--red);
-  border-radius: 50%;
-}
 .about-section h2 {
   margin: 0 0 12px;
   color: var(--white);
@@ -133,7 +117,6 @@ export default function AboutSection() {
           <div className="about-copy-col">
             <div className="about-topline">
               <span className="about-eyebrow">About Beaconsfield</span>
-              <span className="about-location">USA based</span>
             </div>
             <h2 id="about-heading">Cyber &amp; tech, working since 2024.</h2>
             <p className="about-copy">
@@ -149,10 +132,6 @@ export default function AboutSection() {
           <ul className="about-points" aria-label="Why Beaconsfield">
             <li>
               <Check size={18} weight="bold" aria-hidden="true" />
-              <span>US-based company</span>
-            </li>
-            <li>
-              <Check size={18} weight="bold" aria-hidden="true" />
               <span>Cyber &amp; tech since 2024</span>
             </li>
             <li>
@@ -162,6 +141,10 @@ export default function AboutSection() {
             <li>
               <Check size={18} weight="bold" aria-hidden="true" />
               <span>Support after launch</span>
+            </li>
+            <li>
+              <Check size={18} weight="bold" aria-hidden="true" />
+              <span>US-based company</span>
             </li>
           </ul>
         </Reveal>

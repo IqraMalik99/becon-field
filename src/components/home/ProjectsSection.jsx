@@ -104,15 +104,6 @@ const css = `
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px);
 }
-.project-card__overlay-tag {
-  color: var(--white);
-  font-size: 0.78rem;
-  font-weight: 800;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
-}
-
 .project-card__body { display: flex; flex: 1; flex-direction: column; gap: 8px; padding: 18px 18px 18px; }
 .project-card__tags {
   align-self: flex-start;
@@ -189,7 +180,6 @@ export default function ProjectsSection() {
                 />
                 <div className="project-card__overlay">
                   <span className="project-card__badge">Featured work</span>
-                  <span className="project-card__overlay-tag">{project.tags}</span>
                 </div>
               </div>
               <div className="project-card__body">
