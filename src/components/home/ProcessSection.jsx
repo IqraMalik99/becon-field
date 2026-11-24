@@ -6,7 +6,7 @@ import { processSteps } from '../../data/site.js'
    reveal one by one on the right and a line fills as you scroll. */
 const css = `
 .process-section {
-  --navy-900: #0a0a0a;
+  --navy-900: var(--surface);
   --cream: #ffffff;
   --orange: #8e0e2c;
   --circle: 40px;

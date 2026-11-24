@@ -2,16 +2,16 @@ import { ArrowUpRight } from '@phosphor-icons/react/dist/csr/ArrowUpRight'
 import { EnvelopeSimple } from '@phosphor-icons/react/dist/csr/EnvelopeSimple'
 import Logo from './Logo.jsx'
 import { serviceCategories } from '../data/services.js'
-import { site } from '../data/site.js'
+import { navItems, site } from '../data/site.js'
 import { useConsultation } from '../context/consultationContext.js'
 
 const year = 2024
 
-/* Inline CSS: dark grey footer + silver glass "Start a project" card */
+/* Inline CSS: solid black footer + silver glass "Start a project" card */
 const css = `
 .site-footer {
   color: #ffffff;
-  background: #000000;
+  background: var(--dark);
   border-top: 1px solid rgba(200, 200, 200, 0.12);
   padding: clamp(32px, 4vw, 52px) 0 20px;
 }
@@ -129,24 +129,11 @@ export default function Footer() {
           <div className="footer-col">
             <h3>Company</h3>
             <ul>
-              <li>
-                <a href="#top">Home</a>
-              </li>
-              <li>
-                <a href="#about">About Us</a>
-              </li>
-              <li>
-                <a href="#services">Services</a>
-              </li>
-              <li>
-                <a href="#solutions">Solutions</a>
-              </li>
-              <li>
-                <a href="#faq">FAQ</a>
-              </li>
-              <li>
-                <a href="#contact">Contact</a>
-              </li>
+              {navItems.map((item) => (
+                <li key={item.to}>
+                  <a href={item.to}>{item.label}</a>
+                </li>
+              ))}
             </ul>
           </div>
 

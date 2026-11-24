@@ -24,14 +24,14 @@ const css = `
 
 html, body, #root { background: var(--dark); }
 
-/* ---------- HERO (dark grey, silver text) ---------- */
+/* ---------- HERO (solid black, silver text) ---------- */
 .hero {
   position: relative;
   overflow: hidden;
   margin: 0;
   padding: clamp(40px, 5vw, 64px) 0 clamp(56px, 8vw, 96px);
   color: var(--ink);
-  background: linear-gradient(140deg, #000000 0%, #0a0a0a 55%, #000000 100%);
+  background: var(--dark);
 }
 .hero__copy .eyebrow { color: var(--silver); font-weight: 600; letter-spacing: 0.08em; }
 .hero__copy .eyebrow__dot { background: var(--red); }

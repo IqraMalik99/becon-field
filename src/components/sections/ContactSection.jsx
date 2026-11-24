@@ -9,7 +9,7 @@ const steps = [
 /* Inline CSS: compact navy section, cream text, form + short "what happens next" */
 const css = `
 .contact-section {
-  --navy-900: #0a0a0a;
+  --navy-900: var(--surface);
   --cream: #ffffff;
   padding: clamp(36px, 5vw, 64px) 0;
   color: #ffffff;

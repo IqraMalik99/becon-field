@@ -7,7 +7,7 @@ const css = `
 .about-section {
   padding: clamp(40px, 5vw, 64px) 0;
   color: var(--white);
-  background: #000000;
+  background: var(--dark);
   border-top: 1px solid var(--line-light);
 }
 .about-inner {
