@@ -1032,6 +1032,30 @@
   box-shadow: 0 0 0 3px rgba(200, 200, 200, 0.18);
 }
 
+.phone-group {
+  display: flex;
+  align-items: stretch;
+  gap: 8px;
+}
+.phone-group__code {
+  flex: 0 0 118px;
+  width: 118px;
+  font-weight: 700;
+}
+.phone-group__number {
+  flex: 1;
+  min-width: 0;
+}
+.phone-group__number::-webkit-outer-spin-button,
+.phone-group__number::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.phone-group__number {
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
 .field textarea {
   resize: vertical;
   min-height: 92px;
@@ -1090,9 +1114,10 @@
 }
 
 .form-success {
-  background: var(--surface-2);
-  border: 1px solid var(--line);
-  border-radius: 22px;
+  background: var(--surface);
+  border: 1px solid var(--line-light);
+  border-left: 3px solid var(--red);
+  border-radius: 18px;
   padding: 24px;
   box-shadow: var(--shadow-sm);
   display: flex;
@@ -1102,25 +1127,53 @@
 }
 
 .form-success__icon {
-  width: 58px;
-  height: 58px;
+  width: 56px;
+  height: 56px;
   border-radius: 50%;
-  background: rgba(200, 200, 200, 0.16);
-  color: var(--silver);
+  background: var(--red);
+  color: var(--white);
   display: grid;
   place-items: center;
-  margin-bottom: 6px;
+  margin-bottom: 4px;
+  box-shadow: 0 10px 24px -12px rgba(142, 14, 44, 0.8);
+}
+
+.form-success__eyebrow {
+  color: var(--red-hover);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
 }
 
 .form-success h2 {
+  margin: 0;
+  color: var(--white);
   font-size: 1.4rem;
 }
 
 .form-success p {
-  color: #ffffff;
+  margin: 0;
+  color: var(--white);
   font-size: 0.92rem;
   line-height: 1.75;
   max-width: 520px;
+}
+
+.form-success .form-success__note {
+  color: var(--white);
+}
+
+.form-success__note a {
+  color: var(--white);
+  font-weight: 800;
+  text-decoration: underline;
+  text-decoration-color: var(--red-hover);
+  text-underline-offset: 3px;
+}
+
+.form-success__note a:hover {
+  color: var(--red-hover);
 }
 
 .form-success .btn {
@@ -1144,6 +1197,11 @@
   border-radius: 0;
   box-shadow: none;
   padding: 0;
+}
+
+.form-success--compact .form-success__icon {
+  width: 46px;
+  height: 46px;
 }
 
 .contact-form--compact {

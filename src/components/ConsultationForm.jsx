@@ -112,14 +112,19 @@ export default function ConsultationForm({
         tabIndex={-1}
       >
         <span className="form-success__icon" aria-hidden="true">
-          <CheckCircle size={30} />
+          <CheckCircle size={30} weight="fill" />
         </span>
-        <h2>Request received.</h2>
+        <span className="form-success__eyebrow">Message sent</span>
+        <h2>Your request is in.</h2>
         <p>
-          Thanks — we have your details. If it is a fit for us, we get back to you soon.
+          Thanks for reaching out. We have your details and will get back to you shortly at the
+          email or phone number you provided.
+        </p>
+        <p className="form-success__note">
+          Need it sooner? Call <a href="tel:+15012518031">+1 (501) 251-8031</a>.
         </p>
         <div className="form-success__actions">
-          <button type="button" className="btn btn--dark" onClick={resetForm}>
+          <button type="button" className="btn btn--primary" onClick={resetForm}>
             Send another request
           </button>
           {onClose && (
@@ -244,13 +249,33 @@ export default function ConsultationForm({
         <div className="form-row">
           <div className="field">
             <label htmlFor={fieldId('phone')}>Phone Number</label>
-            <input
-              id={fieldId('phone')}
-              name="phone"
-              type="tel"
-              autoComplete="tel"
-              placeholder="Include your country code if relevant"
-            />
+            <div className="phone-group">
+              <select
+                className="phone-group__code"
+                name="countryCode"
+                aria-label="Country code"
+                defaultValue="+1"
+              >
+                <option value="+1">+1 US/CA</option>
+                <option value="+44">+44 UK</option>
+                <option value="+91">+91 IN</option>
+                <option value="+92">+92 PK</option>
+                <option value="+61">+61 AU</option>
+                <option value="+971">+971 AE</option>
+                <option value="+49">+49 DE</option>
+                <option value="+33">+33 FR</option>
+              </select>
+              <input
+                id={fieldId('phone')}
+                className="phone-group__number"
+                name="phone"
+                type="number"
+                inputMode="numeric"
+                min="0"
+                autoComplete="tel-national"
+                placeholder="501 251 8031"
+              />
+            </div>
           </div>
 
           <div className={`field${errors.date ? ' has-error' : ''}`}>
