@@ -168,7 +168,7 @@ export default function Footer() {
             &copy; {year} {site.name}. All rights reserved.
           </p>
           <p className="footer-bottom__note">
-            IT support &middot; Software &middot; Mobile apps &middot; AI automation
+            {serviceCategories.map((category) => category.shortName).join(' · ')}
           </p>
         </div>
       </div>
