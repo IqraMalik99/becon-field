@@ -4,8 +4,8 @@ import Logo from './Logo.jsx'
 import { navItems, site } from '../data/site.js'
 import { useConsultation } from '../context/consultationContext.js'
 
-const phone = '+1 706-642-0459'
-const phoneHref = 'tel:+17066420459'
+const phone = '+1 (501) 251-8031'
+const phoneHref = 'tel:+15012518031'
 
 const css = `
 .site-header,

@@ -1,5 +1,5 @@
 export const site = {
-  name: 'beconsfield',
+  name: 'BeaconsFields',
   // Public contact address shown in the footer. The Gmail inbox is kept
   // backend-only via CONTACT_TO in .env and is never rendered on the site.
   email: 'Info@beacons-field.com',
