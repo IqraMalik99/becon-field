@@ -121,7 +121,7 @@ export async function sendLeadEmail(lead, env = process.env) {
   const { text, html } = buildMessage(lead)
 
   await transporter.sendMail({
-    from: `"Making Tech Awesome" <${config.user}>`,
+    from: `"beconsfield" <${config.user}>`,
     to: config.to,
     replyTo: `"${lead.name}" <${lead.email}>`,
     subject: `Free consultation request — ${lead.service}`,

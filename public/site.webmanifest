@@ -1,6 +1,6 @@
 {
-  "name": "Beacons Fields",
-  "short_name": "Beacons Fields",
+  "name": "beconsfield",
+  "short_name": "beconsfield",
   "description": "IT support, software development, AI automation, and business systems for growing businesses.",
   "start_url": "/",
   "display": "standalone",

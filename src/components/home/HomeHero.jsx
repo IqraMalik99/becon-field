@@ -63,7 +63,7 @@ html, body, #root { background: var(--dark); }
   color: #fff;
   background: var(--red);
   border: 1px solid var(--red);
-  box-shadow: 0 10px 24px rgba(225, 29, 46, 0.28);
+  box-shadow: 0 10px 24px rgba(142, 14, 44, 0.28);
 }
 .hero__actions .btn--primary:hover { background: var(--red-hover); transform: translateY(-2px); }
 .hero__actions .btn--ghost {
@@ -171,7 +171,7 @@ html, body, #root { background: var(--dark); }
 .glass-form .contact-submit:disabled { opacity: 0.7; cursor: progress; }
 
 .glass-form .form-note { margin: 12px 0 0; color: rgba(230, 230, 230, 0.6); font-size: 0.8rem; text-align: center; }
-.glass-form .form-alert { margin-bottom: 12px; padding: 12px 14px; color: #ffd5da; background: rgba(225, 29, 46, 0.14); border: 1px solid rgba(225, 29, 46, 0.38); border-radius: 12px; font-size: 0.9rem; }
+.glass-form .form-alert { margin-bottom: 12px; padding: 12px 14px; color: #ffd9e4; background: rgba(142, 14, 44, 0.14); border: 1px solid rgba(142, 14, 44, 0.38); border-radius: 12px; font-size: 0.9rem; }
 .glass-form .form-alert a { color: #fff; }
 .glass-form .request-notice { display: flex; gap: 8px; margin-bottom: 12px; padding: 10px 12px; color: var(--text-soft); background: rgba(200, 200, 200, 0.09); border-radius: 12px; font-size: 0.9rem; }
 .hp-field { position: absolute; left: -9999px; }
@@ -222,7 +222,7 @@ html, body, #root { background: var(--dark); }
 .hero__form .field-error { color: #ff8a96; }
 .hero__form .has-error input,
 .hero__form .has-error select { border-color: #ff7a8a; }
-.hero__form .form-alert { color: #ffb3ba; background: rgba(225, 29, 46, 0.12); border-color: rgba(225, 29, 46, 0.35); }
+.hero__form .form-alert { color: #ffc2d1; background: rgba(142, 14, 44, 0.12); border-color: rgba(142, 14, 44, 0.35); }
 .hero__form .form-alert a { color: var(--ink); }
 .hero__form .contact-submit {
   padding: 11px 16px;
@@ -230,7 +230,7 @@ html, body, #root { background: var(--dark); }
   border-radius: 10px;
   color: #fff;
   background: var(--red);
-  box-shadow: 0 8px 20px rgba(225, 29, 46, 0.25);
+  box-shadow: 0 8px 20px rgba(142, 14, 44, 0.25);
 }
 .hero__form .contact-submit:hover:not(:disabled) { background: var(--red-hover); }
 .hero__form .form-note { margin-top: 9px; font-size: 0.74rem; color: rgba(230, 230, 230, 0.6); }

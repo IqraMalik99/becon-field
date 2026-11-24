@@ -20,7 +20,7 @@ const css = `
   background: rgba(230, 230, 230, 0.08);
   border: 1px solid rgba(230, 230, 230, 0.25);
 }
-.tech-section .eyebrow__dot { background: #e11d2e; }
+.tech-section .eyebrow__dot { background: #8e0e2c; }
 .tech-section [class*='heading'],
 .tech-section .section-head { margin-bottom: 0; }
 .tech-section [class*='heading'] p,

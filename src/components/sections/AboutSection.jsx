@@ -50,7 +50,7 @@ const css = `
   border: 0;
   border-radius: 12px;
   cursor: pointer;
-  box-shadow: 0 10px 24px rgba(225, 29, 46, 0.2);
+  box-shadow: 0 10px 24px rgba(142, 14, 44, 0.2);
   transition: transform 0.18s ease, background 0.18s ease;
 }
 .about-section__copy .btn:hover { background: var(--red-hover); transform: translateY(-2px); }

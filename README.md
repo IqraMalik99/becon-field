@@ -1,6 +1,6 @@
-# Making Tech Awesome
+# beconsfield
 
-A responsive React website for Making Tech Awesome, covering IT support, web and
+A responsive React website for beconsfield, covering IT support, web and
 software development, mobile apps, AI automation, and cybersecurity and maintenance.
 
 ## Run locally

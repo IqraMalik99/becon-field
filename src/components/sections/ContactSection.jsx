@@ -68,7 +68,7 @@ const css = `
 .contact-section .contact-form .field-error { color: #ffb4bd !important; font-size: 0.82rem; margin: 0; }
 .contact-section .contact-form .has-error input,
 .contact-section .contact-form .has-error select { border-color: #ff8a98; }
-.contact-section .contact-form .form-alert { color: #ffd5da !important; background: rgba(255, 90, 110, 0.14); border: 1px solid rgba(255, 122, 138, 0.4); border-radius: 10px; padding: 10px 12px; margin-bottom: 12px; font-size: 0.88rem; }
+.contact-section .contact-form .form-alert { color: #ffd9e4 !important; background: rgba(255, 90, 110, 0.14); border: 1px solid rgba(255, 122, 138, 0.4); border-radius: 10px; padding: 10px 12px; margin-bottom: 12px; font-size: 0.88rem; }
 .contact-section .contact-form .form-alert a { color: var(--cream) !important; }
 .contact-section .contact-form .contact-submit {
   display: inline-flex;

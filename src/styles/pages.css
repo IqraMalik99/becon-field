@@ -1040,7 +1040,7 @@
 .field.has-error input,
 .field.has-error select {
   border-color: #ff8a96;
-  background: rgba(225, 29, 46, 0.12);
+  background: rgba(142, 14, 44, 0.12);
 }
 
 .field-error {
@@ -1050,12 +1050,12 @@
 }
 
 .form-alert {
-  background: rgba(225, 29, 46, 0.12);
-  border: 1px solid rgba(225, 29, 46, 0.4);
+  background: rgba(142, 14, 44, 0.12);
+  border: 1px solid rgba(142, 14, 44, 0.4);
   border-radius: 11px;
   padding: 12px 14px;
   font-size: 0.82rem;
-  color: #ffb3ba;
+  color: #ffc2d1;
 }
 
 .form-alert a {

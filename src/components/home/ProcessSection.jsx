@@ -8,7 +8,7 @@ const css = `
 .process-section {
   --navy-900: #0a0a0a;
   --cream: #e6e6e6;
-  --orange: #e11d2e;
+  --orange: #8e0e2c;
   --circle: 40px;
   padding: clamp(40px, 5vw, 72px) 0;
   color: var(--cream);
@@ -82,7 +82,7 @@ const css = `
   transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
 }
 .tl-step.is-done .tl-step__circle { color: var(--navy-900); background: var(--cream); border-color: var(--cream); }
-.tl-step.is-active .tl-step__circle { color: #fff; background: var(--orange); border-color: var(--orange); transform: scale(1.12); box-shadow: 0 0 0 6px rgba(225, 29, 46, 0.22); }
+.tl-step.is-active .tl-step__circle { color: #fff; background: var(--orange); border-color: var(--orange); transform: scale(1.12); box-shadow: 0 0 0 6px rgba(142, 14, 44, 0.22); }
 
 .tl-step__body { padding-top: 2px; }
 .tl-step h3 { margin: 0 0 4px; color: var(--cream); font-size: 1.08rem; font-weight: 700; line-height: 1.25; }

@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" role="img" aria-label="beconsfield">
+  <defs>
+    <linearGradient id="black" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#111111" />
+      <stop offset="1" stop-color="#000000" />
+    </linearGradient>
+    <linearGradient id="grey" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#454545" />
+      <stop offset="0.6" stop-color="#202020" />
+      <stop offset="1" stop-color="#0a0a0a" />
+    </linearGradient>
+    <linearGradient id="silver" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ffffff" />
+      <stop offset="0.35" stop-color="#a8a8a8" />
+      <stop offset="0.65" stop-color="#d8d8d8" />
+      <stop offset="1" stop-color="#7a7a7a" />
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="16" fill="url(#black)" />
+  <path d="M34 10h10a10 10 0 0 1 10 10v18a10 10 0 0 1-10 10H34a9 9 0 0 0 9-9V19a9 9 0 0 0-9-9Z" fill="url(#grey)" opacity="0.75" />
+  <path d="M32 12 18 51l14-6 14 6-14-39Z" fill="url(#silver)" />
+  <path d="M32 12 18 51l4-1 14-38-4 0Z" fill="#ffffff" opacity="0.22" />
+  <path d="M32 12v33l14 6-14-39Z" fill="#666666" opacity="0.4" />
+  <circle cx="32" cy="12" r="3" fill="url(#silver)" />
+  <path d="M10 51h44" stroke="#b5b5b5" stroke-width="2" stroke-linecap="round" opacity="0.85" />
+  <path d="M18 57h28" stroke="#8c8c8c" stroke-width="1.5" stroke-linecap="round" opacity="0.6" />
+</svg>
