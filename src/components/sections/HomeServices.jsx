@@ -25,7 +25,7 @@ const css = `
 .onepage-services .section-head__text { margin: 0; color: var(--ink-soft); font-size: 1rem; line-height: 1.55; }
 
 /* ---- Category cards ---- */
-.svc-cats { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; max-width: 1120px; margin: 0 auto; }
+.svc-cats { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 10px; max-width: 1180px; margin: 0 auto; }
 .svc-cat {
   position: relative;
   display: flex;
@@ -142,13 +142,14 @@ const css = `
 .svc-all__note { margin: 0; color: var(--ink-soft); font-size: 0.9rem; }
 
 @media (max-width: 1100px) {
-  .sp-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .svc-cats, .sp-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 }
 @media (max-width: 900px) {
   .svc-cats, .sp-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 @media (max-width: 420px) {
-  .svc-cats { gap: 10px; }
+  .svc-cats { gap: 8px; }
+  .svc-cat { padding: 12px 10px; }
   .sp-grid { grid-template-columns: 1fr; }
 }
 `
@@ -180,7 +181,7 @@ export default function HomeServices() {
         </div>
 
         <div className="svc-cats">
-          {serviceCategories.slice(0, 4).map((category) => {
+          {serviceCategories.map((category) => {
             const isOpen = active === category.slug
             return (
               <article

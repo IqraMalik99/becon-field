@@ -148,8 +148,6 @@ const css = `
 .project-card__cta:hover { background: var(--red-hover); border-color: var(--red-hover); color: #ffffff; gap: 12px; transform: translateY(-2px); }
 .project-card__body .project-card__cta { margin-top: 10px; }
 
-.project-note { max-width: 40rem; margin: 28px auto 0; color: var(--ink-soft); font-size: 0.85rem; text-align: center; }
-
 @media (max-width: 960px) {
   .project-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
@@ -208,11 +206,6 @@ export default function ProjectsSection() {
             </Reveal>
           ))}
         </div>
-
-        <p className="project-note">
-          Client names and results are shared only with permission. Ask us for relevant
-          examples.
-        </p>
       </div>
     </section>
   )

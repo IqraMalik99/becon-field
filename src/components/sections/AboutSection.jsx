@@ -2,40 +2,82 @@ import { ArrowRight } from '@phosphor-icons/react/dist/csr/ArrowRight'
 import Reveal from '../Reveal.jsx'
 import { useConsultation } from '../../context/consultationContext.js'
 
-/* Inline CSS: minimal flat About band, bright white text, red CTA */
+/* Inline CSS: sleek text-only About band, Inter typography, bright white text */
 const css = `
 .about-section {
-  padding: clamp(40px, 5vw, 60px) 0;
+  padding: clamp(40px, 5vw, 64px) 0;
   color: var(--white);
   background: #000000;
   border-top: 1px solid var(--line-light);
 }
-.about-copy { max-width: 46rem; }
-.about-copy .eyebrow { color: var(--white); font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; }
-.about-copy .eyebrow__dot { background: var(--red); }
-.about-copy h2 {
-  margin: 8px 0 10px;
-  color: var(--white);
-  font-size: clamp(1.5rem, 2.6vw, 2rem);
-  line-height: 1.12;
-  letter-spacing: -0.03em;
+.about-inner {
+  max-width: 52rem;
+  font-family: var(--font);
 }
-.about-copy .text-accent-bright {
-  color: var(--white);
-  text-decoration: underline;
-  text-decoration-color: var(--red);
-  text-decoration-thickness: 3px;
-  text-underline-offset: 5px;
+.about-topline {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px 18px;
+  margin-bottom: 16px;
 }
-.about-copy__lead { margin: 0; color: var(--white); font-size: 0.94rem; line-height: 1.6; }
+.about-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  color: var(--white);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+.about-eyebrow::before {
+  content: '';
+  width: 22px;
+  height: 2px;
+  background: var(--red);
+  border-radius: 2px;
+}
+.about-location {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: var(--white);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+.about-location::before {
+  content: '';
+  width: 5px;
+  height: 5px;
+  background: var(--red);
+  border-radius: 50%;
+}
+.about-section h2 {
+  margin: 0 0 12px;
+  color: var(--white);
+  font-family: var(--font);
+  font-size: clamp(1.5rem, 2.8vw, 2.15rem);
+  font-weight: 700;
+  line-height: 1.16;
+  letter-spacing: -0.035em;
+}
+.about-copy {
+  margin: 0;
+  color: var(--white);
+  font-size: 0.98rem;
+  line-height: 1.7;
+}
 .about-cta {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  margin-top: 16px;
+  margin-top: 20px;
   padding: 11px 18px;
   color: var(--white);
-  font: inherit;
+  font-family: var(--font);
+  font-size: 0.92rem;
   font-weight: 700;
   background: var(--red);
   border: 1px solid var(--red);
@@ -53,17 +95,16 @@ export default function AboutSection() {
     <section className="section about-section" id="about" aria-labelledby="about-heading">
       <style>{css}</style>
       <div className="container">
-        <Reveal className="about-copy">
-          <p className="eyebrow">
-            <span className="eyebrow__dot" aria-hidden="true" />
-            About Beaconsfield
-          </p>
-          <h2 id="about-heading">
-            Small senior team. <span className="text-accent-bright">No middlemen.</span>
-          </h2>
-          <p className="about-copy__lead">
-            One team for IT support, software, mobile, AI and security — with clear scope, honest
-            costs and support after launch.
+        <Reveal className="about-inner">
+          <div className="about-topline">
+            <span className="about-eyebrow">About Beaconsfield</span>
+            <span className="about-location">USA based</span>
+          </div>
+          <h2 id="about-heading">Cyber &amp; tech, working since 2024.</h2>
+          <p className="about-copy">
+            Beaconsfield is a technology and cybersecurity company. We help businesses secure their
+            systems, build software, and keep IT running — with clear scope, honest costs, and
+            support after launch.
           </p>
           <button type="button" className="about-cta" onClick={() => openConsultation()}>
             Talk to our team <ArrowRight size={17} aria-hidden="true" />

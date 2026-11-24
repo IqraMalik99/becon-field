@@ -450,13 +450,6 @@
   padding-top: 8px;
 }
 
-.project-note {
-  margin-top: 28px;
-  font-size: 0.78rem;
-  color: #ffffff;
-  max-width: 760px;
-}
-
 .roadmap {
   margin-top: clamp(28px, 4vw, 44px);
 }
