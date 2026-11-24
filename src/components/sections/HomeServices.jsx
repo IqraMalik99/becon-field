@@ -25,16 +25,16 @@ const css = `
 .onepage-services .section-head__text { margin: 0; color: var(--ink-soft); font-size: 1rem; line-height: 1.55; }
 
 /* ---- Category cards ---- */
-.svc-cats { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
+.svc-cats { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; max-width: 1120px; margin: 0 auto; }
 .svc-cat {
   position: relative;
   display: flex;
   flex-direction: column;
-  gap: 8px;
-  padding: 18px 16px 16px;
+  gap: 6px;
+  padding: 14px 13px;
   background: var(--surface-2);
   border: 1px solid var(--line-light);
-  border-radius: 16px;
+  border-radius: 14px;
   transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
 }
 .svc-cat:hover { transform: translateY(-3px); border-color: rgba(200, 200, 200, 0.5); box-shadow: 0 14px 30px rgba(0, 0, 0, 0.35); }
@@ -42,24 +42,24 @@ const css = `
 .svc-cat__icon {
   display: grid;
   place-items: center;
-  width: 42px;
-  height: 42px;
+  width: 36px;
+  height: 36px;
   color: var(--silver);
   background: rgba(200, 200, 200, 0.1);
-  border-radius: 12px;
+  border-radius: 11px;
 }
-.svc-cat__name { margin: 6px 0 0; color: var(--ink); font-size: 1.02rem; font-weight: 700; line-height: 1.25; }
+.svc-cat__name { margin: 4px 0 0; color: var(--ink); font-size: 0.94rem; font-weight: 700; line-height: 1.25; }
 .svc-cat__text {
   margin: 0;
   color: var(--ink-soft);
-  font-size: 0.86rem;
-  line-height: 1.45;
+  font-size: 0.8rem;
+  line-height: 1.4;
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
-.svc-cat__meta { margin: 0; color: var(--silver); font-size: 0.78rem; font-weight: 600; }
+.svc-cat__meta { margin: 0; color: var(--silver); font-size: 0.72rem; font-weight: 600; }
 .svc-cat__actions { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-top: auto; padding-top: 6px; }
 .svc-cat .svc-view {
   display: inline-flex;
@@ -142,10 +142,14 @@ const css = `
 .svc-all__note { margin: 0; color: var(--ink-soft); font-size: 0.9rem; }
 
 @media (max-width: 1100px) {
+  .sp-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+@media (max-width: 900px) {
   .svc-cats, .sp-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
-@media (max-width: 560px) {
-  .svc-cats, .sp-grid { grid-template-columns: 1fr; }
+@media (max-width: 420px) {
+  .svc-cats { gap: 10px; }
+  .sp-grid { grid-template-columns: 1fr; }
 }
 `
 
@@ -176,7 +180,7 @@ export default function HomeServices() {
         </div>
 
         <div className="svc-cats">
-          {serviceCategories.map((category) => {
+          {serviceCategories.slice(0, 4).map((category) => {
             const isOpen = active === category.slug
             return (
               <article
