@@ -1034,17 +1034,34 @@
 
 .phone-group {
   display: flex;
-  align-items: stretch;
-  gap: 8px;
+  align-items: flex-end;
+  gap: 10px;
+}
+.phone-group__box {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  min-width: 0;
+}
+.phone-group__box--code {
+  flex: 0 0 108px;
+}
+.phone-group__box--number {
+  flex: 1;
+}
+.phone-group__caption {
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 .phone-group__code {
-  flex: 0 0 118px;
-  width: 118px;
+  width: 100%;
   font-weight: 700;
 }
 .phone-group__number {
-  flex: 1;
-  min-width: 0;
+  width: 100%;
 }
 .phone-group__number::-webkit-outer-spin-button,
 .phone-group__number::-webkit-inner-spin-button {

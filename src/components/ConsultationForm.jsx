@@ -247,34 +247,46 @@ export default function ConsultationForm({
 
       <div className="form-more__region" id={`${idPrefix}-more`} hidden={!showMore}>
         <div className="form-row">
-          <div className="field">
-            <label htmlFor={fieldId('phone')}>Phone Number</label>
+          <div className="field phone-field">
+            <label className="phone-field__label" htmlFor={fieldId('phone')}>
+              Phone Number
+            </label>
             <div className="phone-group">
-              <select
-                className="phone-group__code"
-                name="countryCode"
-                aria-label="Country code"
-                defaultValue="+1"
-              >
-                <option value="+1">+1 US/CA</option>
-                <option value="+44">+44 UK</option>
-                <option value="+91">+91 IN</option>
-                <option value="+92">+92 PK</option>
-                <option value="+61">+61 AU</option>
-                <option value="+971">+971 AE</option>
-                <option value="+49">+49 DE</option>
-                <option value="+33">+33 FR</option>
-              </select>
-              <input
-                id={fieldId('phone')}
-                className="phone-group__number"
-                name="phone"
-                type="number"
-                inputMode="numeric"
-                min="0"
-                autoComplete="tel-national"
-                placeholder="501 251 8031"
-              />
+              <div className="phone-group__box phone-group__box--code">
+                <span className="phone-group__caption" aria-hidden="true">
+                  Code
+                </span>
+                <select
+                  className="phone-group__code"
+                  name="countryCode"
+                  aria-label="Country code"
+                  defaultValue="+1"
+                >
+                  <option value="+1">+1 US/CA</option>
+                  <option value="+44">+44 UK</option>
+                  <option value="+91">+91 IN</option>
+                  <option value="+92">+92 PK</option>
+                  <option value="+61">+61 AU</option>
+                  <option value="+971">+971 AE</option>
+                  <option value="+49">+49 DE</option>
+                  <option value="+33">+33 FR</option>
+                </select>
+              </div>
+              <div className="phone-group__box phone-group__box--number">
+                <span className="phone-group__caption" aria-hidden="true">
+                  Number
+                </span>
+                <input
+                  id={fieldId('phone')}
+                  className="phone-group__number"
+                  name="phone"
+                  type="number"
+                  inputMode="numeric"
+                  min="0"
+                  autoComplete="tel-national"
+                  placeholder="501 251 8031"
+                />
+              </div>
             </div>
           </div>
 
