@@ -30,10 +30,14 @@ export function validateConsultation({ name, email, service, date }) {
 }
 
 export function createConsultationPayload(data, service, details) {
+  const countryCode = String(data.countryCode ?? '').trim()
+  const digits = String(data.phone ?? '').replace(/\D/g, '')
+  const phone = digits ? `${countryCode}${digits}` : ''
+
   return {
     name: String(data.name ?? '').trim(),
     email: String(data.email ?? '').trim(),
-    phone: String(data.phone ?? '').trim(),
+    phone,
     service,
     date: String(data.date ?? ''),
     time: String(data.time ?? ''),
