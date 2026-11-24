@@ -47,63 +47,6 @@ const cybersecurity = {
       ],
     },
     {
-      slug: 'firewall-web-protection',
-      title: 'Firewall & Web Protection',
-      summary:
-        'Firewall rules and web filtering that protect without blocking legitimate work.',
-      description:
-        'Good protection is proportionate. We configure firewalls, web filtering, and network rules around your actual operations, review access regularly, and make sure remote access stays secure.',
-      benefits: [
-        'Network access controlled by role',
-        'Blocked threats with fewer false alarms',
-        'Secure remote and guest access',
-      ],
-      includes: [
-        'Firewall configuration and review',
-        'Web filtering and access rules',
-        'VPN and remote access security',
-        'Periodic security checks',
-      ],
-    },
-    {
-      slug: 'surveillance-system-support',
-      title: 'Surveillance System Support',
-      summary:
-        'Support for IP camera systems, storage, and remote viewing.',
-      description:
-        'Surveillance systems need reliable recording, secure access, and storage that does not run out unexpectedly. We install, configure, and troubleshoot camera systems, including remote viewing and retention settings.',
-      benefits: [
-        'Reliable recording and storage',
-        'Secure remote viewing',
-        'A clear retention and access policy',
-      ],
-      includes: [
-        'Camera and NVR setup',
-        'Remote viewing configuration',
-        'Storage and retention planning',
-        'Fault diagnosis and repair',
-      ],
-    },
-    {
-      slug: 'website-maintenance',
-      title: 'Website Maintenance',
-      summary:
-        'Planned updates, monitoring, and fixes that keep your site healthy.',
-      description:
-        'A website needs regular care: updates, backups, performance checks, and fixes when something breaks. We handle that routine work on a schedule so small issues are caught before they affect customers.',
-      benefits: [
-        'Updates and backups handled on schedule',
-        'Issues caught before customers notice',
-        'A clear record of work completed',
-      ],
-      includes: [
-        'Core and plugin updates',
-        'Backups and restore checks',
-        'Performance and uptime monitoring',
-        'Content and bug fixes',
-      ],
-    },
-    {
       slug: 'monthly-it-maintenance',
       title: 'Monthly IT Maintenance',
       summary:
@@ -120,25 +63,6 @@ const cybersecurity = {
         'Patch and update management',
         'Backup verification',
         'Monthly service report',
-      ],
-    },
-    {
-      slug: 'cloud-backup-recovery',
-      title: 'Cloud Backup & Recovery',
-      summary:
-        'Off-site backup and tested recovery for critical business data.',
-      description:
-        'Local backups are not enough when a device is stolen, a drive fails, or an office is inaccessible. We configure encrypted cloud backups, set sensible retention, and test recovery so you know the data can be restored.',
-      benefits: [
-        'Data protected off-site',
-        'Encrypted storage and transfer',
-        'Recovery tested before an emergency',
-      ],
-      includes: [
-        'Cloud backup configuration',
-        'Encryption and access control',
-        'Retention and versioning policy',
-        'Recovery testing and support',
       ],
     },
     {

@@ -6,9 +6,9 @@ import { processSteps } from '../../data/site.js'
    reveal one by one on the right and a line fills as you scroll. */
 const css = `
 .process-section {
-  --navy-900: #0a1a3d;
-  --cream: #f6f1e7;
-  --orange: #e8720c;
+  --navy-900: #0a0a0a;
+  --cream: #e6e6e6;
+  --orange: #e11d2e;
   --circle: 40px;
   padding: clamp(40px, 5vw, 72px) 0;
   color: var(--cream);
@@ -29,12 +29,12 @@ const css = `
   color: var(--cream);
   font-weight: 600;
   letter-spacing: 0.08em;
-  background: rgba(246, 241, 231, 0.08);
-  border: 1px solid rgba(246, 241, 231, 0.25);
+  background: rgba(230, 230, 230, 0.08);
+  border: 1px solid rgba(230, 230, 230, 0.25);
 }
 .process-section .eyebrow__dot { background: var(--orange); }
 .process-section [class*='heading'] p,
-.process-section .section-head__text { margin: 0; color: rgba(246, 241, 231, 0.75); font-size: 1rem; line-height: 1.55; }
+.process-section .section-head__text { margin: 0; color: rgba(230, 230, 230, 0.75); font-size: 1rem; line-height: 1.55; }
 .process-side .section-head,
 .process-side [class*='heading'] { text-align: left; margin: 0; }
 
@@ -48,7 +48,7 @@ const css = `
   width: 2px;
   border-radius: 2px;
 }
-.timeline__track { height: var(--track, 0px); background: rgba(246, 241, 231, 0.18); }
+.timeline__track { height: var(--track, 0px); background: rgba(230, 230, 230, 0.18); }
 .timeline__fill { height: var(--fill, 0px); background: var(--orange); transition: height 0.12s linear; }
 
 .tl-step {
@@ -77,16 +77,16 @@ const css = `
   font-size: 0.88rem;
   font-weight: 800;
   background: var(--navy-900);
-  border: 2px solid rgba(246, 241, 231, 0.4);
+  border: 2px solid rgba(230, 230, 230, 0.4);
   border-radius: 50%;
   transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
 }
 .tl-step.is-done .tl-step__circle { color: var(--navy-900); background: var(--cream); border-color: var(--cream); }
-.tl-step.is-active .tl-step__circle { color: #fff; background: var(--orange); border-color: var(--orange); transform: scale(1.12); box-shadow: 0 0 0 6px rgba(232, 114, 12, 0.22); }
+.tl-step.is-active .tl-step__circle { color: #fff; background: var(--orange); border-color: var(--orange); transform: scale(1.12); box-shadow: 0 0 0 6px rgba(225, 29, 46, 0.22); }
 
 .tl-step__body { padding-top: 2px; }
 .tl-step h3 { margin: 0 0 4px; color: var(--cream); font-size: 1.08rem; font-weight: 700; line-height: 1.25; }
-.tl-step p { margin: 0; max-width: 32rem; color: rgba(246, 241, 231, 0.75); font-size: 0.92rem; line-height: 1.5; }
+.tl-step p { margin: 0; max-width: 32rem; color: rgba(230, 230, 230, 0.75); font-size: 0.92rem; line-height: 1.5; }
 
 @media (max-width: 900px) {
   .process-layout { grid-template-columns: 1fr; gap: 28px; }

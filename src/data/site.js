@@ -10,7 +10,7 @@ export const navItems = [
   { label: 'Home', to: '#top' },
   { label: 'About Us', to: '#about' },
   { label: 'Services', to: '#services' },
-  { label: 'Solutions', to: '#solutions' },
+  { label: 'Our Work', to: '#work' },
   { label: 'Contact', to: '#contact' },
 ]
 
@@ -21,9 +21,9 @@ export const businessProblems = [
     link: { label: 'Workflow automation', to: '/services/ai-automation/workflow-automation' },
   },
   {
-    problem: 'Losing potential customers',
-    solution: 'Lead capture and CRM systems where every enquiry has a clear owner.',
-    link: { label: 'Lead generation systems', to: '/services/crm-lead-generation/lead-generation-systems' },
+    problem: 'Slow, unreliable devices',
+    solution: 'Hardware diagnostics and upgrades that keep your team working without interruptions.',
+    link: { label: 'Hardware troubleshooting', to: '/services/it-support/hardware-troubleshooting' },
   },
   {
     problem: 'Slow customer responses',
@@ -134,8 +134,8 @@ export const techGroups = [
     items: ['OpenAI', 'Anthropic', 'LangChain', 'n8n', 'Make', 'Zapier'],
   },
   {
-    label: 'Business platforms',
-    items: ['HubSpot', 'Zoho', 'Salesforce', 'Shopify', 'WordPress', 'Twilio'],
+    label: 'Platforms & tools',
+    items: ['WordPress', 'Shopify', 'Docker', 'Git', 'Linux', 'Figma'],
   },
 ]
 
@@ -151,7 +151,7 @@ export const faqs = [
       'We look for a specific, repetitive task with a measurable cost: answering the same questions, re-entering data, routing enquiries, or preparing routine documents. If a simpler rule-based automation will do the job, we will recommend that instead of adding AI for its own sake.',
   },
   {
-    question: 'Do you work with businesses that already have a website or CRM?',
+    question: 'Do you work with businesses that already have a website or internal system?',
     answer:
       'Often. We can improve and extend what exists, migrate it to a better platform, or integrate it with new tools. We will tell you when a rebuild is genuinely necessary and when targeted fixes are the better use of budget.',
   },

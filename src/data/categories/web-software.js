@@ -47,44 +47,6 @@ const webSoftware = {
       ],
     },
     {
-      slug: 'ecommerce-development',
-      title: 'E-commerce Development',
-      summary:
-        'Online stores designed for straightforward browsing, checkout, and order management.',
-      description:
-        'An online store has to do more than look good. We build commerce experiences with clear product structure, a low-friction checkout, secure payments, and an admin experience your team can run day to day.',
-      benefits: [
-        'A checkout that reduces abandoned orders',
-        'Secure payments and order handling',
-        'Store management your team can own',
-      ],
-      includes: [
-        'Store design and product structure',
-        'Payment and shipping integration',
-        'Inventory and order workflows',
-        'Analytics and conversion tracking',
-      ],
-    },
-    {
-      slug: 'saas-platform-development',
-      title: 'SaaS Platform Development',
-      summary:
-        'Multi-tenant platforms with accounts, subscriptions, and scalable infrastructure.',
-      description:
-        'Building a SaaS product means getting the foundations right: user accounts, billing, permissions, data isolation, and infrastructure that can grow. We help you design and deliver each layer without overbuilding too early.',
-      benefits: [
-        'A platform architecture that can scale',
-        'Clear subscription and account handling',
-        'Security considered from the start',
-      ],
-      includes: [
-        'Product and architecture planning',
-        'Authentication and multi-tenancy',
-        'Subscription and billing integration',
-        'Cloud deployment and monitoring',
-      ],
-    },
-    {
       slug: 'custom-business-software',
       title: 'Custom Business Software',
       summary:
@@ -120,25 +82,6 @@ const webSoftware = {
         'Third-party service integration',
         'Authentication and rate-limit handling',
         'API documentation and monitoring',
-      ],
-    },
-    {
-      slug: 'website-redesign-bug-fixing',
-      title: 'Website Redesign & Bug Fixing',
-      summary:
-        'Modernise an ageing website or repair issues that are holding it back.',
-      description:
-        'Not every site needs to be rebuilt from scratch. We audit what you have, fix broken functionality, improve performance and accessibility, and redesign the parts that are costing you enquiries while preserving what already works.',
-      benefits: [
-        'Existing strengths retained',
-        'Faster, more accessible pages',
-        'Clear fixes instead of unnecessary rebuilds',
-      ],
-      includes: [
-        'Website and performance audit',
-        'Frontend bug diagnosis and repair',
-        'Responsive redesign of key pages',
-        'Accessibility and SEO improvements',
       ],
     },
   ],

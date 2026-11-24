@@ -3,16 +3,16 @@ import { Check } from '@phosphor-icons/react/dist/csr/Check'
 import { useConsultation } from '../../context/consultationContext.js'
 import { whyUs } from '../../data/site.js'
 
-/* Inline CSS: light cream section, navy text, navy buttons */
+/* Inline CSS: dark section, silver text, red primary button */
 const css = `
 .about-section {
-  --navy-900: #0a1a3d;
-  --navy-800: #0d1f45;
-  --ink-soft: rgba(10, 26, 61, 0.7);
+  --navy-900: #f5f5f5;
+  --navy-800: #c8c8c8;
+  --ink-soft: rgba(245, 245, 245, 0.72);
   padding: clamp(32px, 4vw, 52px) 0;
-  color: var(--navy-900);
-  background: #fbf9f4;
-  border-top: 1px solid rgba(10, 26, 61, 0.08);
+  color: var(--ink);
+  background: var(--dark);
+  border-top: 1px solid var(--line-light);
 }
 .about-section__grid {
   display: grid;
@@ -20,19 +20,19 @@ const css = `
   gap: clamp(28px, 6vw, 80px);
   align-items: center;
 }
-.about-section .eyebrow { color: var(--navy-900); font-weight: 600; letter-spacing: 0.08em; }
-.about-section .eyebrow__dot { background: #e8720c; }
+.about-section .eyebrow { color: var(--silver); font-weight: 600; letter-spacing: 0.08em; }
+.about-section .eyebrow__dot { background: var(--red); }
 .about-section h2 {
   margin: 8px 0 10px;
-  color: var(--navy-900);
+  color: var(--ink);
   font-size: clamp(1.5rem, 3vw, 2.1rem);
   line-height: 1.12;
   letter-spacing: -0.02em;
 }
 .about-section .text-accent-bright {
-  color: var(--navy-900);
+  color: var(--silver);
   text-decoration: underline;
-  text-decoration-color: #e8720c;
+  text-decoration-color: var(--red);
   text-decoration-thickness: 3px;
   text-underline-offset: 6px;
 }
@@ -43,17 +43,17 @@ const css = `
   gap: 8px;
   margin-top: 8px;
   padding: 11px 20px;
-  color: #fff;
+  color: var(--white);
   font: inherit;
   font-weight: 600;
-  background: var(--navy-900);
+  background: var(--red);
   border: 0;
   border-radius: 12px;
   cursor: pointer;
-  box-shadow: 0 10px 24px rgba(10, 26, 61, 0.22);
+  box-shadow: 0 10px 24px rgba(225, 29, 46, 0.2);
   transition: transform 0.18s ease, background 0.18s ease;
 }
-.about-section__copy .btn:hover { background: var(--navy-800); transform: translateY(-2px); }
+.about-section__copy .btn:hover { background: var(--red-hover); transform: translateY(-2px); }
 
 .about-section__list { display: grid; gap: 8px; margin: 0; padding: 0; list-style: none; }
 .about-section__list li {
@@ -61,24 +61,23 @@ const css = `
   align-items: flex-start;
   gap: 14px;
   padding: 11px 14px;
-  background: #fff;
-  border: 1px solid rgba(10, 26, 61, 0.12);
+  background: var(--surface-2);
+  border: 1px solid var(--line-light);
   border-radius: 14px;
-  box-shadow: 0 4px 14px rgba(10, 26, 61, 0.05);
-  transition: transform 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease;
+  transition: transform 0.18s ease, border-color 0.18s ease;
 }
-.about-section__list li:hover { transform: translateX(4px); border-color: var(--navy-900); box-shadow: 0 10px 24px rgba(10, 26, 61, 0.1); }
+.about-section__list li:hover { transform: translateX(4px); border-color: rgba(200, 200, 200, 0.5); }
 .about-section__icon {
   display: grid;
   place-items: center;
   flex-shrink: 0;
   width: 30px;
   height: 30px;
-  color: #f6f1e7;
-  background: var(--navy-900);
+  color: var(--white);
+  background: var(--red);
   border-radius: 50%;
 }
-.about-section__list h3 { margin: 0 0 2px; color: var(--navy-900); font-size: 1rem; font-weight: 700; line-height: 1.25; }
+.about-section__list h3 { margin: 0 0 2px; color: var(--ink); font-size: 1rem; font-weight: 700; line-height: 1.25; }
 .about-section__list p {
   margin: 0;
   color: var(--ink-soft);
@@ -111,7 +110,7 @@ export default function AboutSection() {
             A small senior team. <span className="text-accent-bright">No middlemen.</span>
           </h2>
           <p>
-            One team for IT support, software, mobile, AI and CRM. You talk directly to the
+            One team for IT support, software, mobile, AI and security. You talk directly to the
             people doing the work, get a written scope and budget up front, and we stay on
             after launch.
           </p>

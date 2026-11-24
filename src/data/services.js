@@ -2,7 +2,6 @@ import itSupport from './categories/it-support.js'
 import webSoftware from './categories/web-software.js'
 import mobileApps from './categories/mobile-apps.js'
 import aiAutomation from './categories/ai-automation.js'
-import crmLeadGeneration from './categories/crm-lead-generation.js'
 import cybersecurity from './categories/cybersecurity-maintenance.js'
 
 export const serviceCategories = [
@@ -10,7 +9,6 @@ export const serviceCategories = [
   webSoftware,
   mobileApps,
   aiAutomation,
-  crmLeadGeneration,
   cybersecurity,
 ]
 
@@ -36,21 +34,18 @@ export function getService(categorySlug, serviceSlug) {
 
 export const contactServiceOptions = [
   'Hardware Support',
-  'Printer & Scanner Support',
   'Network Support',
+  'Software Installation & Upgrades',
+  'Remote IT Support',
   'Website Development',
   'Web Application Development',
-  'E-commerce Development',
-  'Mobile App Development',
   'Custom Software Development',
+  'API Development & Integration',
+  'Mobile App Development',
   'AI Chatbot Development',
   'AI Voice Agents',
   'Workflow Automation',
-  'WhatsApp Automation',
-  'CRM Setup & Development',
-  'Lead Generation',
   'Cybersecurity',
-  'Website Maintenance',
   'Monthly IT Maintenance',
   'Other / Custom Requirements',
 ]

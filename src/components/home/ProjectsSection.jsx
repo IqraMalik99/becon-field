@@ -5,8 +5,8 @@ import { useConsultation } from '../../context/consultationContext.js'
 
 const projects = [
   {
-    image: '/images/projects/ai-support.webp',
-    alt: 'Support team reviewing customer questions',
+    image: '/images/projects/ai-support.jpg',
+    alt: 'Support team collaborating around a table',
     tags: 'AI · Customer support',
     title: 'AI assistant that answers from your own documents',
     text: 'Trained on approved content. Hands over to a real person when it is unsure.',
@@ -14,17 +14,17 @@ const projects = [
     cta: 'Get a quote',
   },
   {
-    image: '/images/projects/crm-pipeline.webp',
-    alt: 'Pipeline reporting on a laptop dashboard',
-    tags: 'CRM · Lead operations',
-    title: 'One pipeline for every enquiry',
-    text: 'Forms, calls and messages land in one place, tracked and assigned to an owner.',
-    service: 'Lead Generation Systems',
-    cta: 'Free audit',
+    image: '/images/projects/web-dashboard.jpg',
+    alt: 'Analytics dashboard on a laptop screen',
+    tags: 'Software · Internal tools',
+    title: 'One dashboard for everyday operations',
+    text: 'A custom web app that replaces spreadsheets with one clear view of the work.',
+    service: 'Web Application Development',
+    cta: 'Get a quote',
   },
   {
-    image: '/images/projects/mobile-field.webp',
-    alt: 'Mobile app used by a field team',
+    image: '/images/projects/mobile-field.jpg',
+    alt: 'Team using laptops to coordinate field work',
     tags: 'Mobile · Field operations',
     title: 'Offline-ready app for teams on site',
     text: 'Keeps working without signal, then syncs with the office when back online.',
@@ -33,20 +33,21 @@ const projects = [
   },
 ]
 
-/* Inline CSS: cream section, white cards, navy text, orange tag chip */
+/* Inline CSS: one full grey band with silver graphics */
 const css = `
 .projects-section {
-  --navy-900: #0a1a3d;
-  --navy-800: #0d1f45;
-  --ink-soft: rgba(10, 26, 61, 0.68);
+  --navy-900: #f5f5f5;
+  --navy-800: #c8c8c8;
+  --ink-soft: rgba(245, 245, 245, 0.72);
   padding: clamp(48px, 6vw, 84px) 0;
-  color: var(--navy-900);
-  background: #f6f1e7;
-  border-top: 1px solid rgba(10, 26, 61, 0.08);
+  color: var(--ink);
+  background: #1e1e1e;
+  border-top: 1px solid rgba(200, 200, 200, 0.18);
+  border-bottom: 1px solid rgba(200, 200, 200, 0.18);
 }
 .projects-section h2 { color: var(--navy-900); letter-spacing: -0.02em; }
 .projects-section .eyebrow { color: var(--navy-900); font-weight: 600; letter-spacing: 0.08em; }
-.projects-section .eyebrow__dot { background: var(--navy-900); }
+.projects-section .eyebrow__dot { background: var(--red); }
 .projects-section [class*='heading'] p,
 .projects-section .section-head__text { color: var(--ink-soft); }
 
@@ -60,28 +61,29 @@ const css = `
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  background: #fff;
-  border: 1px solid rgba(10, 26, 61, 0.12);
+  background: #141414;
+  border: 1px solid rgba(200, 200, 200, 0.2);
   border-radius: 18px;
-  box-shadow: 0 6px 18px rgba(10, 26, 61, 0.06);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
   transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
 }
-.project-card:hover { transform: translateY(-4px); border-color: var(--navy-900); box-shadow: 0 18px 38px rgba(10, 26, 61, 0.14); }
+.project-card:hover { transform: translateY(-4px); border-color: rgba(200, 200, 200, 0.55); box-shadow: 0 18px 38px rgba(0, 0, 0, 0.45); }
 
-.project-card__visual { position: relative; aspect-ratio: 16 / 10; overflow: hidden; background: #e4dccb; }
-.project-card__visual img { display: block; width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease; }
-.project-card:hover .project-card__visual img { transform: scale(1.04); }
+.project-card__visual { position: relative; aspect-ratio: 16 / 10; overflow: hidden; background: #0f0f0f; }
+.project-card__visual img { display: block; width: 100%; height: 100%; object-fit: cover; filter: grayscale(1) contrast(1.05) brightness(0.9); transition: transform 0.4s ease, filter 0.4s ease; }
+.project-card:hover .project-card__visual img { transform: scale(1.04); filter: grayscale(0.35) contrast(1.02) brightness(0.98); }
 .project-card__badge {
   position: absolute;
   top: 12px;
   left: 12px;
   padding: 4px 11px;
-  color: #fff;
+  color: var(--silver);
   font-size: 0.68rem;
   font-weight: 700;
   letter-spacing: 0.05em;
   text-transform: uppercase;
-  background: var(--navy-900);
+  background: #242424;
+  border: 1px solid rgba(200, 200, 200, 0.22);
   border-radius: 999px;
 }
 
@@ -90,12 +92,12 @@ const css = `
   align-self: flex-start;
   margin: 0;
   padding: 3px 10px;
-  color: #b45309;
+  color: var(--silver);
   font-size: 0.72rem;
   font-weight: 700;
   letter-spacing: 0.04em;
   text-transform: uppercase;
-  background: rgba(232, 114, 12, 0.12);
+  background: rgba(200, 200, 200, 0.12);
   border-radius: 999px;
 }
 .project-card__body h3 { margin: 4px 0 0; color: var(--navy-900); font-size: 1.12rem; line-height: 1.25; }
@@ -108,17 +110,17 @@ const css = `
   gap: 8px;
   margin-top: auto;
   padding: 9px 16px;
-  color: #fff;
+  color: var(--silver);
   font: inherit;
   font-size: 0.85rem;
   font-weight: 600;
-  background: var(--navy-900);
-  border: 0;
+  background: #242424;
+  border: 1px solid rgba(200, 200, 200, 0.25);
   border-radius: 10px;
   cursor: pointer;
   transition: background 0.18s ease, gap 0.18s ease;
 }
-.project-card__cta:hover { background: var(--navy-800); gap: 12px; }
+.project-card__cta:hover { background: rgba(200, 200, 200, 0.18); color: #ffffff; gap: 12px; }
 .project-card__body .project-card__cta { margin-top: 10px; }
 
 .project-note { max-width: 40rem; margin: 28px auto 0; color: var(--ink-soft); font-size: 0.85rem; text-align: center; }
@@ -156,8 +158,8 @@ export default function ProjectsSection() {
                 <img
                   src={project.image}
                   alt={project.alt}
-                  width="640"
-                  height="420"
+                  width="1200"
+                  height="800"
                   loading="lazy"
                   decoding="async"
                 />

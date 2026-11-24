@@ -9,44 +9,6 @@ const mobileApps = {
     'We build mobile products that are quick to use, reliable on real networks, and connected to the systems behind your business.',
   services: [
     {
-      slug: 'android-app-development',
-      title: 'Android App Development',
-      summary:
-        'Native Android applications built for performance and the wider Android device range.',
-      description:
-        'Android users are on a wide range of devices and OS versions. We build apps that perform well across that range, follow platform conventions, and use native capabilities such as notifications, camera, and location where they add real value.',
-      benefits: [
-        'Reliable performance across devices',
-        'Platform-native navigation and permissions',
-        'Play Store release support',
-      ],
-      includes: [
-        'Native Android development',
-        'Device and OS compatibility testing',
-        'Push notifications and offline support',
-        'Play Store submission and release',
-      ],
-    },
-    {
-      slug: 'ios-app-development',
-      title: 'iOS App Development',
-      summary:
-        'Native iOS applications designed for the Apple ecosystem and App Store requirements.',
-      description:
-        'iOS users expect speed, privacy, and polish. We build native apps with clean interfaces, sensible permissions, and the performance expected on iPhone and iPad, then guide the app through App Store review.',
-      benefits: [
-        'A polished, native iOS experience',
-        'Privacy and permission handling done properly',
-        'App Store submission support',
-      ],
-      includes: [
-        'Native iOS development',
-        'iPhone and iPad layouts',
-        'Secure data and authentication',
-        'App Store submission and release',
-      ],
-    },
-    {
       slug: 'cross-platform-app-development',
       title: 'Cross-Platform App Development',
       summary:
@@ -81,26 +43,7 @@ const mobileApps = {
         'Field and operational app development',
         'Offline data capture and sync',
         'Role-based access and audit trails',
-        'Backend and CRM integration',
-      ],
-    },
-    {
-      slug: 'ecommerce-mobile-applications',
-      title: 'E-commerce Mobile Applications',
-      summary:
-        'Mobile shopping apps connected to your products, customers, and order systems.',
-      description:
-        'A mobile store should make repeat purchasing easy. We build shopping apps with fast product browsing, saved details, secure checkout, and order updates, connected to the commerce platform you already run.',
-      benefits: [
-        'A faster path to repeat purchases',
-        'Secure, familiar checkout flows',
-        'Orders and inventory synced with your store',
-      ],
-      includes: [
-        'Product catalogue and search',
-        'Cart, checkout, and payments',
-        'Push notifications and order updates',
-        'Store platform integration',
+        'Backend integration',
       ],
     },
     {

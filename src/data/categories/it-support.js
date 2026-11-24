@@ -28,44 +28,6 @@ const itSupport = {
       ],
     },
     {
-      slug: 'printer-support',
-      title: 'Printer Support',
-      summary:
-        'Setup, configuration, and troubleshooting for office and network printers.',
-      description:
-        'Printers tend to fail at the worst moment. We resolve driver conflicts, connection problems, print queue errors, and hardware faults, and we configure shared printers so the right people can reach the right device without repeated workarounds.',
-      benefits: [
-        'Less time lost to recurring print errors',
-        'Secure, correctly shared network printing',
-        'Support for mixed printer brands and models',
-      ],
-      includes: [
-        'Network and Wi-Fi printer setup',
-        'Driver installation and conflict resolution',
-        'Print queue and spooler repair',
-        'Consumables and maintenance guidance',
-      ],
-    },
-    {
-      slug: 'scanner-support',
-      title: 'Scanner Support',
-      summary:
-        'Scanner setup, driver fixes, and document workflow configuration.',
-      description:
-        'A scanner is only useful when documents arrive where they are needed. We configure scan-to-email, scan-to-folder, and OCR workflows, resolve driver and connection issues, and make sure scanned files are usable rather than sitting in the wrong format.',
-      benefits: [
-        'Documents delivered to the right destination',
-        'Searchable, correctly formatted scans',
-        'Fewer repeated setup requests',
-      ],
-      includes: [
-        'Scanner installation and network setup',
-        'Scan-to-email and scan-to-folder configuration',
-        'OCR and file format configuration',
-        'Driver and software troubleshooting',
-      ],
-    },
-    {
       slug: 'network-setup',
       title: 'Network Setup & Troubleshooting',
       summary:
@@ -101,25 +63,6 @@ const itSupport = {
         'Operating system upgrades',
         'License and version management',
         'Rollout planning and user support',
-      ],
-    },
-    {
-      slug: 'data-backup-recovery',
-      title: 'Data Backup & Recovery',
-      summary:
-        'Backup systems that are planned, tested, and ready when data is lost.',
-      description:
-        'A backup only counts when it can be restored. We design backup routines around your critical data, verify that restores work, and help recover files after accidental deletion, device failure, or a ransomware incident.',
-      benefits: [
-        'Backups tested before you need them',
-        'Faster recovery from data loss',
-        'A clear retention and storage policy',
-      ],
-      includes: [
-        'Backup strategy and scheduling',
-        'Local and cloud backup setup',
-        'Restore testing and verification',
-        'Data recovery after loss or corruption',
       ],
     },
     {

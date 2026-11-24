@@ -1,8 +1,7 @@
 # Making Tech Awesome
 
 A responsive React website for Making Tech Awesome, covering IT support, web and
-software development, mobile apps, AI automation, CRM and lead generation, and
-cybersecurity and maintenance.
+software development, mobile apps, AI automation, and cybersecurity and maintenance.
 
 ## Run locally
 

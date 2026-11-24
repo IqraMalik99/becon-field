@@ -4,12 +4,12 @@ import { techGroups } from '../../data/site.js'
 /* Inline CSS: compact solid navy section, cream text, small glass groups */
 const css = `
 .tech-section {
-  --navy-900: #0a1a3d;
-  --cream: #f6f1e7;
+  --navy-900: #0a0a0a;
+  --cream: #e6e6e6;
   padding: clamp(32px, 4vw, 52px) 0;
   color: var(--cream);
   background: var(--navy-900);
-  border-top: 1px solid rgba(246, 241, 231, 0.1);
+  border-top: 1px solid rgba(230, 230, 230, 0.1);
 }
 .tech-section h2 { margin: 6px 0 4px; color: var(--cream); font-size: clamp(1.4rem, 2.8vw, 2rem); line-height: 1.15; letter-spacing: -0.02em; }
 .tech-section .eyebrow,
@@ -17,14 +17,14 @@ const css = `
   color: var(--cream);
   font-weight: 600;
   letter-spacing: 0.08em;
-  background: rgba(246, 241, 231, 0.08);
-  border: 1px solid rgba(246, 241, 231, 0.25);
+  background: rgba(230, 230, 230, 0.08);
+  border: 1px solid rgba(230, 230, 230, 0.25);
 }
-.tech-section .eyebrow__dot { background: #e8720c; }
+.tech-section .eyebrow__dot { background: #e11d2e; }
 .tech-section [class*='heading'],
 .tech-section .section-head { margin-bottom: 0; }
 .tech-section [class*='heading'] p,
-.tech-section .section-head__text { margin: 0; color: rgba(246, 241, 231, 0.72); font-size: 0.95rem; }
+.tech-section .section-head__text { margin: 0; color: rgba(230, 230, 230, 0.72); font-size: 0.95rem; }
 
 .tech-chips {
   display: grid;
@@ -38,16 +38,16 @@ const css = `
   gap: 8px;
   margin: 0;
   padding: 14px 16px;
-  background: rgba(246, 241, 231, 0.06);
-  border: 1px solid rgba(246, 241, 231, 0.16);
+  background: rgba(230, 230, 230, 0.06);
+  border: 1px solid rgba(230, 230, 230, 0.16);
   border-radius: 14px;
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   transition: border-color 0.18s ease, background 0.18s ease, transform 0.18s ease;
 }
-.tech-chip:hover { background: rgba(246, 241, 231, 0.1); border-color: rgba(246, 241, 231, 0.4); transform: translateY(-2px); }
+.tech-chip:hover { background: rgba(230, 230, 230, 0.1); border-color: rgba(230, 230, 230, 0.4); transform: translateY(-2px); }
 .tech-chip__label {
-  color: #f6a35c;
+  color: var(--silver);
   font-size: 0.72rem;
   font-weight: 700;
   letter-spacing: 0.1em;
@@ -59,7 +59,7 @@ const css = `
   color: var(--cream);
   font-size: 0.8rem;
   font-weight: 500;
-  background: rgba(246, 241, 231, 0.09);
+  background: rgba(230, 230, 230, 0.09);
   border-radius: 999px;
 }
 

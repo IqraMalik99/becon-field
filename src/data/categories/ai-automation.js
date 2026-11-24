@@ -42,27 +42,8 @@ const aiAutomation = {
       includes: [
         'Call flow and script design',
         'Voice agent configuration',
-        'Calendar and CRM integration',
+        'Calendar integration',
         'Call recording and quality review',
-      ],
-    },
-    {
-      slug: 'whatsapp-automation',
-      title: 'WhatsApp Automation',
-      summary:
-        'Automated WhatsApp conversations for enquiries, updates, and follow-ups.',
-      description:
-        'Customers already use WhatsApp, and many prefer it for quick questions. We set up approved business messaging flows for enquiries, order updates, reminders, and follow-ups, with templates and opt-in handled correctly.',
-      benefits: [
-        'Replies in the channel customers use',
-        'Consistent follow-up without manual effort',
-        'Opt-in and template compliance handled',
-      ],
-      includes: [
-        'WhatsApp Business API setup',
-        'Message template design',
-        'Automated enquiry and follow-up flows',
-        'CRM and order data integration',
       ],
     },
     {
@@ -101,63 +82,6 @@ const aiAutomation = {
         'Automation build in n8n, Make, or Zapier',
         'Approvals and notifications',
         'Monitoring and error alerts',
-      ],
-    },
-    {
-      slug: 'customer-support-automation',
-      title: 'Customer Support Automation',
-      summary:
-        'Triage, routing, and suggested replies that reduce support workload.',
-      description:
-        'Support teams lose time sorting tickets and answering the same questions. We automate triage, route requests to the right person, suggest responses from your knowledge base, and surface the issues that need immediate attention.',
-      benefits: [
-        'Tickets reach the right person sooner',
-        'Faster first response',
-        'Support trends visible in one place',
-      ],
-      includes: [
-        'Support workflow review',
-        'Ticket triage and routing',
-        'AI-assisted reply suggestions',
-        'Reporting and escalation rules',
-      ],
-    },
-    {
-      slug: 'business-process-automation',
-      title: 'Business Process Automation',
-      summary:
-        'End-to-end automation for operations, finance, HR, and administration.',
-      description:
-        'Some processes span several teams and systems. We document the current process, remove unnecessary steps, and automate the repeatable parts, from data entry and document generation to approvals and reporting.',
-      benefits: [
-        'Less administrative overhead',
-        'Fewer errors from manual entry',
-        'Processes documented and repeatable',
-      ],
-      includes: [
-        'Process discovery and documentation',
-        'Automation design and delivery',
-        'Document and report generation',
-        'Team training and handover',
-      ],
-    },
-    {
-      slug: 'third-party-api-integrations',
-      title: 'Third-Party API Integrations',
-      summary:
-        'Connect AI and automation tools to the platforms your business already relies on.',
-      description:
-        'Automation only works when it can reach your real data. We integrate CRMs, accounting tools, e-commerce platforms, messaging services, and internal systems through their APIs, with authentication and error handling that holds up in production.',
-      benefits: [
-        'Your existing tools stay in place',
-        'Data moves reliably between systems',
-        'Failures are visible and recoverable',
-      ],
-      includes: [
-        'Integration scoping and testing',
-        'Secure API authentication',
-        'Data mapping and transformation',
-        'Error handling and monitoring',
       ],
     },
   ],

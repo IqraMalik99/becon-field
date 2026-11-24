@@ -46,7 +46,7 @@
   font-weight: 800;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: #4e5e70;
+  color: var(--muted);
   margin-bottom: 6px;
 }
 
@@ -89,7 +89,7 @@
   padding: 14px;
   border-radius: 16px;
   border: 1px solid var(--line);
-  background: var(--white);
+  background: var(--surface-2);
   text-align: left;
   cursor: pointer;
   font: inherit;
@@ -103,7 +103,7 @@
 .sp-card:hover {
   transform: translateY(-3px);
   box-shadow: var(--shadow-sm);
-  border-color: rgba(29, 78, 216, 0.4);
+  border-color: rgba(225, 29, 46, 0.4);
 }
 
 .sp-card:focus-visible {
@@ -146,8 +146,8 @@
   gap: 6px;
   margin-top: auto;
   padding: 6px 10px;
-  background: rgba(37, 99, 235, 0.15);
-  border: 1px rgba(37, 99, 235, 0.3);
+  background: rgba(225, 29, 46, 0.15);
+  border: 1px rgba(225, 29, 46, 0.3);
   border-radius: 999px;
   font-size: 0.7rem;
   font-weight: 800;
@@ -156,8 +156,8 @@
 
 .sp-card:hover .sp-card__cta {
   color: var(--accent-bright);
-  background: rgba(37, 99, 235, 0.25);
-  border-color: rgba(37, 99, 235, 0.4);
+  background: rgba(225, 29, 46, 0.25);
+  border-color: rgba(225, 29, 46, 0.4);
 }
 
 /* Hide less-important "Show all" and "Not sure" text */
@@ -197,7 +197,7 @@
   padding: 22px;
   border: 1px solid var(--line-light);
   border-radius: var(--radius-lg);
-  background: rgba(245, 243, 234, 0.04);
+  background: rgba(230, 230, 230, 0.04);
 }
 
 .about-section__list li {
@@ -213,7 +213,7 @@
   flex: 0 0 auto;
   display: grid;
   place-items: center;
-  background: rgba(138, 184, 255, 0.16);
+  background: rgba(200, 200, 200, 0.16);
   color: var(--accent-bright);
   margin-top: 1px;
 }
@@ -232,7 +232,7 @@
 
 /* Solutions section on light background */
 .solutions-section--light .solutions-copy .eyebrow {
-  color: var(--secondary);
+  color: var(--silver);
 }
 
 .solutions-section--light .section-head h2 {
@@ -264,7 +264,7 @@
 }
 
 .solutions-section--light .problem-row__link:hover {
-  color: var(--secondary);
+  color: var(--silver);
 }
 
 /* Contact section on dark */
@@ -295,7 +295,7 @@
 }
 
 .contact-section .contact-panel--light .eyebrow {
-  color: var(--secondary);
+  color: var(--silver);
 }
 
 .contact-section .contact-steps li {
@@ -311,7 +311,7 @@
 }
 
 .contact-section .contact-meta li {
-  color: #4e5e70;
+  color: var(--muted);
 }
 
 /* Category cards with progressive "see more" reveal */
@@ -328,7 +328,7 @@
   padding: 16px;
   border: 1px solid var(--line);
   border-radius: 16px;
-  background: var(--white);
+  background: var(--surface-2);
   box-shadow: var(--shadow-sm);
 }
 
@@ -358,7 +358,7 @@
   font-weight: 800;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: #4e5e70;
+  color: var(--muted);
 }
 
 .svc-cat__actions {
@@ -388,7 +388,7 @@
 .svc-cat__list {
   margin-top: 10px;
   padding-top: 12px;
-  border-top: 1px dashed rgba(11, 31, 51, 0.16);
+  border-top: 1px dashed rgba(230, 230, 230, 0.16);
 }
 
 .svc-more {
@@ -399,7 +399,7 @@
   padding: 0;
   border: 0;
   background: none;
-  color: var(--secondary);
+  color: var(--silver);
   font-size: 0.76rem;
   font-weight: 800;
   cursor: pointer;
@@ -426,7 +426,7 @@
 /* Glassmorphism form surfaces */
 .glass-form {
   position: relative;
-  background: rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.035);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border: 1px rgba(255, 255, 255, 0.3);
@@ -437,7 +437,7 @@
 
 .glass-form__field {
   position: relative;
-  background: rgba(251, 250, 244, 0.85);
+  background: var(--surface-2);
   backdrop-filter: blur(12px) saturate(140%);
   border: 1px solid rgba(255, 255, 255, 0.4);
   margin-bottom: 20px;
@@ -479,33 +479,52 @@
   border-top: 1px solid rgba(255, 255, 255, 0.3);
 }
 
-/* Fixed WhatsApp floating action button */
-.fab--whatsapp {
+/* Fixed call + email action dock */
+.fab-dock {
   position: fixed;
   right: 20px;
   bottom: 20px;
   z-index: 300;
   display: flex;
+  gap: 10px;
+}
+
+.fab-dock a {
+  display: flex;
   align-items: center;
   justify-content: center;
-  width: 56px;
-  height: 56px;
+  width: 52px;
+  height: 52px;
   border-radius: 50%;
-  background: #25d366;
-  color: white;
+  border: 1px solid rgba(200, 200, 200, 0.28);
+  background: rgba(10, 10, 10, 0.92);
+  color: var(--silver);
   text-decoration: none;
-  box-shadow: 0 10px 30px -10px rgba(37, 211, 102, 0.5);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: 0 10px 30px -12px rgba(0, 0, 0, 0.6);
+  transition: transform 0.2s ease, background 0.2s ease, color 0.2s ease;
 }
 
-.fab--whatsapp:hover {
-  transform: scale(1.1);
-  box-shadow: 0 15px 40px -15px rgba(37, 211, 102, 0.6);
+.fab-dock a:hover {
+  transform: translateY(-3px);
+  background: var(--surface-3);
+  color: var(--white);
 }
 
-.fab--whatsapp svg {
-  width: 24px;
-  height: 24px;
+.fab-dock a.fab-dock__call {
+  background: var(--red);
+  border-color: rgba(255, 255, 255, 0.2);
+  color: var(--white);
+}
+
+.fab-dock a.fab-dock__call:hover {
+  background: var(--red-hover);
+}
+
+.fab-dock svg {
+  width: 22px;
+  height: 22px;
 }
 
 /* Sections that disappear on small screens */

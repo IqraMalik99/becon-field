@@ -4,17 +4,17 @@ import SectionHeading from '../SectionHeading.jsx'
 import { businessProblems } from '../../data/site.js'
 import { useConsultation } from '../../context/consultationContext.js'
 
-/* Inline CSS: restrained, editorial list. Navy on cream, hairline dividers, no decoration. */
+/* Inline CSS: dark grey editorial list, silver text, hairline dividers */
 const css = `
 .solutions-section {
-  --navy-900: #0a1a3d;
-  --navy-800: #0d1f45;
-  --ink-soft: rgba(10, 26, 61, 0.68);
-  --line: rgba(10, 26, 61, 0.14);
+  --navy-900: #f5f5f5;
+  --navy-800: #c8c8c8;
+  --ink-soft: rgba(245, 245, 245, 0.72);
+  --line: rgba(230, 230, 230, 0.14);
   padding: clamp(36px, 5vw, 64px) 0;
-  color: var(--navy-900);
-  background: #f6f1e7;
-  border-top: 1px solid rgba(10, 26, 61, 0.08);
+  color: var(--ink);
+  background: var(--surface);
+  border-top: 1px solid var(--line-light);
 }
 .solutions-grid {
   display: grid;
@@ -23,9 +23,9 @@ const css = `
   align-items: start;
 }
 .solutions-copy { position: sticky; top: 110px; }
-.solutions-section h2 { margin: 6px 0 8px; color: var(--navy-900); font-size: clamp(1.5rem, 2.8vw, 2.1rem); line-height: 1.15; letter-spacing: -0.02em; }
-.solutions-section .eyebrow { color: var(--navy-900); font-weight: 600; letter-spacing: 0.08em; }
-.solutions-section .eyebrow__dot { background: var(--navy-900); }
+.solutions-section h2 { margin: 6px 0 8px; color: var(--ink); font-size: clamp(1.5rem, 2.8vw, 2.1rem); line-height: 1.15; letter-spacing: -0.02em; }
+.solutions-section .eyebrow { color: var(--silver); font-weight: 600; letter-spacing: 0.08em; }
+.solutions-section .eyebrow__dot { background: var(--red); }
 .solutions-section [class*='heading'] p,
 .solutions-section .section-head__text { margin: 0 0 16px; color: var(--ink-soft); font-size: 0.97rem; line-height: 1.5; }
 .solutions-copy .section-head,
@@ -35,16 +35,16 @@ const css = `
   align-items: center;
   gap: 8px;
   padding: 11px 20px;
-  color: #fff;
+  color: var(--white);
   font: inherit;
   font-weight: 600;
-  background: var(--navy-900);
+  background: var(--red);
   border: 0;
   border-radius: 8px;
   cursor: pointer;
   transition: background 0.18s ease;
 }
-.solutions-copy > .btn:hover { background: var(--navy-800); }
+.solutions-copy > .btn:hover { background: var(--red-hover); }
 
 /* List */
 .problem-list { border-top: 1px solid var(--line); }
@@ -57,8 +57,8 @@ const css = `
   border-bottom: 1px solid var(--line);
   transition: background 0.18s ease;
 }
-.problem-row:hover { background: rgba(10, 26, 61, 0.04); }
-.problem-row__problem { color: var(--navy-900); font-size: 0.98rem; font-weight: 600; line-height: 1.35; }
+.problem-row:hover { background: rgba(200, 200, 200, 0.05); }
+.problem-row__problem { color: var(--ink); font-size: 0.98rem; font-weight: 600; line-height: 1.35; }
 .problem-row__solution {
   color: var(--ink-soft);
   font-size: 0.9rem;
@@ -73,7 +73,7 @@ const css = `
   align-items: center;
   gap: 6px;
   padding: 0;
-  color: var(--navy-900);
+  color: var(--silver);
   font: inherit;
   font-size: 0.85rem;
   font-weight: 600;
@@ -84,7 +84,7 @@ const css = `
   cursor: pointer;
   transition: border-color 0.18s ease;
 }
-.problem-row__btn:hover { border-bottom-color: var(--navy-900); }
+.problem-row__btn:hover { border-bottom-color: var(--silver); color: var(--white); }
 .problem-row__btn svg { transition: transform 0.18s ease; }
 .problem-row__btn:hover svg { transform: translateX(3px); }
 

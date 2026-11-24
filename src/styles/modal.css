@@ -5,7 +5,7 @@
   display: grid;
   place-items: center;
   padding: 24px;
-  background: rgba(7, 26, 43, 0.76);
+  background: rgba(0, 0, 0, 0.76);
   backdrop-filter: blur(6px);
   animation: modal-fade 0.2s ease both;
 }
@@ -18,9 +18,9 @@
   max-height: calc(100vh - 40px);
   max-height: calc(100dvh - 40px);
   overflow: hidden;
-  background: var(--white);
+  background: var(--surface-2);
   color: var(--ink);
-  border: 1px solid rgba(11, 31, 51, 0.08);
+  border: 1px solid rgba(230, 230, 230, 0.08);
   border-radius: 20px;
   box-shadow: 0 44px 120px -32px rgba(0, 0, 0, 0.72);
   animation: modal-rise 0.28s var(--ease) both;
@@ -65,8 +65,8 @@
 }
 
 .modal__close:hover {
-  background: var(--white);
-  border-color: rgba(11, 31, 51, 0.24);
+  background: var(--surface-2);
+  border-color: rgba(230, 230, 230, 0.24);
   transform: rotate(4deg);
 }
 
@@ -76,7 +76,7 @@
   overflow-y: auto;
   overscroll-behavior: contain;
   scrollbar-width: thin;
-  scrollbar-color: rgba(11, 31, 51, 0.22) transparent;
+  scrollbar-color: rgba(230, 230, 230, 0.22) transparent;
 }
 
 .modal__body::-webkit-scrollbar {
@@ -85,7 +85,7 @@
 
 .modal__body::-webkit-scrollbar-thumb {
   border-radius: 999px;
-  background: rgba(11, 31, 51, 0.22);
+  background: rgba(230, 230, 230, 0.22);
 }
 
 .modal__body .contact-form {

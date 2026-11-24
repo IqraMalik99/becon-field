@@ -6,33 +6,25 @@ import { serviceCategories, allServices } from '../../data/services.js'
 import { getServiceIcon } from '../../data/serviceIcons.js'
 import { useConsultation } from '../../context/consultationContext.js'
 
-/* Edit these to match your real offers. They rotate across the category cards. */
-const OFFERS = [
-  { label: '40% off', tone: 'green' }, // discounts show in green
-  { label: 'Free audit', tone: 'orange' },
-  { label: '30% off', tone: 'green' },
-  { label: 'Free quote', tone: 'orange' },
-]
-
-/* Inline CSS: small cards, 4 per row, same navy as the home banner */
+/* Inline CSS: dark grey section, silver cards, red primary CTA only */
 const css = `
 .onepage-services {
-  --navy-900: #0a1a3d;
-  --navy-800: #0d1f45;
-  --ink-soft: rgba(10, 26, 61, 0.68);
+  --navy-900: #f5f5f5;
+  --navy-800: #c8c8c8;
+  --ink-soft: rgba(245, 245, 245, 0.7);
   padding: clamp(48px, 6vw, 84px) 0;
-  color: var(--navy-900);
-  background: #fbf9f4;
-  border-top: 1px solid rgba(10, 26, 61, 0.08);
+  color: var(--ink);
+  background: var(--surface);
+  border-top: 1px solid var(--line-light);
 }
 .onepage-services .section-head { max-width: 40rem; margin: 0 auto clamp(28px, 4vw, 44px); text-align: center; }
-.onepage-services .eyebrow { color: var(--navy-900); font-weight: 600; letter-spacing: 0.08em; }
-.onepage-services .eyebrow__dot { background: var(--navy-900); }
-.onepage-services h2 { margin: 10px 0 10px; color: var(--navy-900); font-size: clamp(1.7rem, 3.4vw, 2.5rem); line-height: 1.12; letter-spacing: -0.02em; }
-.onepage-services .text-accent { color: var(--navy-900); text-decoration: underline; text-decoration-thickness: 3px; text-underline-offset: 6px; text-decoration-color: rgba(10, 26, 61, 0.25); }
+.onepage-services .eyebrow { color: var(--silver); font-weight: 600; letter-spacing: 0.08em; }
+.onepage-services .eyebrow__dot { background: var(--red); }
+.onepage-services h2 { margin: 10px 0 10px; color: var(--ink); font-size: clamp(1.7rem, 3.4vw, 2.5rem); line-height: 1.12; letter-spacing: -0.02em; }
+.onepage-services .text-accent { color: var(--silver); text-decoration: underline; text-decoration-thickness: 3px; text-underline-offset: 6px; text-decoration-color: rgba(200, 200, 200, 0.3); }
 .onepage-services .section-head__text { margin: 0; color: var(--ink-soft); font-size: 1rem; line-height: 1.55; }
 
-/* ---- 4 small cards per row ---- */
+/* ---- Category cards ---- */
 .svc-cats { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
 .svc-cat {
   position: relative;
@@ -40,39 +32,23 @@ const css = `
   flex-direction: column;
   gap: 8px;
   padding: 18px 16px 16px;
-  background: #fff;
-  border: 1px solid rgba(10, 26, 61, 0.12);
+  background: var(--surface-2);
+  border: 1px solid var(--line-light);
   border-radius: 16px;
-  box-shadow: 0 6px 18px rgba(10, 26, 61, 0.05);
   transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
 }
-.svc-cat:hover { transform: translateY(-3px); border-color: var(--navy-900); box-shadow: 0 14px 30px rgba(10, 26, 61, 0.12); }
-.svc-cat.is-active { border-color: var(--navy-900); box-shadow: 0 0 0 2px var(--navy-900); }
-.svc-cat__badge {
-  position: absolute;
-  top: 14px;
-  right: 14px;
-  padding: 3px 9px;
-  color: #fff;
-  font-size: 0.68rem;
-  font-weight: 700;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  background: #e8720c;
-  box-shadow: 0 4px 10px rgba(232, 114, 12, 0.35);
-  border-radius: 999px;
-}
-.svc-cat__badge--green { background: #1e9e57; box-shadow: 0 4px 10px rgba(30, 158, 87, 0.35); }
+.svc-cat:hover { transform: translateY(-3px); border-color: rgba(200, 200, 200, 0.5); box-shadow: 0 14px 30px rgba(0, 0, 0, 0.35); }
+.svc-cat.is-active { border-color: var(--silver); box-shadow: 0 0 0 2px rgba(200, 200, 200, 0.35); }
 .svc-cat__icon {
   display: grid;
   place-items: center;
   width: 42px;
   height: 42px;
-  color: var(--navy-900);
-  background: rgba(10, 26, 61, 0.07);
+  color: var(--silver);
+  background: rgba(200, 200, 200, 0.1);
   border-radius: 12px;
 }
-.svc-cat__name { margin: 6px 0 0; color: var(--navy-900); font-size: 1.02rem; font-weight: 700; line-height: 1.25; }
+.svc-cat__name { margin: 6px 0 0; color: var(--ink); font-size: 1.02rem; font-weight: 700; line-height: 1.25; }
 .svc-cat__text {
   margin: 0;
   color: var(--ink-soft);
@@ -83,43 +59,43 @@ const css = `
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
-.svc-cat__meta { margin: 0; color: var(--navy-900); font-size: 0.78rem; font-weight: 600; opacity: 0.7; }
+.svc-cat__meta { margin: 0; color: var(--silver); font-size: 0.78rem; font-weight: 600; opacity: 0.75; }
 .svc-cat__actions { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-top: auto; padding-top: 6px; }
-.svc-cat .btn--primary {
+.svc-cat .svc-view {
   display: inline-flex;
   align-items: center;
   gap: 6px;
   padding: 8px 14px;
-  color: #fff;
+  color: var(--silver);
   font-size: 0.82rem;
   font-weight: 600;
-  background: var(--navy-900);
-  border: 0;
+  background: var(--surface-3);
+  border: 1px solid var(--line-light);
   border-radius: 10px;
   cursor: pointer;
-  transition: background 0.18s ease;
+  transition: background 0.18s ease, color 0.18s ease;
 }
-.svc-cat .btn--primary:hover { background: var(--navy-800); }
+.svc-cat .svc-view:hover { background: rgba(200, 200, 200, 0.2); color: var(--white); }
 .svc-caret { transition: transform 0.18s ease; }
 .svc-caret.is-open { transform: rotate(180deg); }
 .svc-cat .text-link {
   padding: 0;
-  color: var(--navy-900);
+  color: var(--silver);
   font-size: 0.8rem;
   font-weight: 600;
   background: none;
   border: 0;
-  border-bottom: 1.5px solid rgba(10, 26, 61, 0.3);
+  border-bottom: 1px solid rgba(200, 200, 200, 0.3);
   cursor: pointer;
 }
-.svc-cat .text-link:hover { border-bottom-color: var(--navy-900); }
+.svc-cat .text-link:hover { color: var(--white); border-bottom-color: var(--white); }
 
 /* ---- Services panel (opens under the cards) ---- */
-.svc-panel { margin-top: 20px; padding: 20px; background: #fff; border: 1px solid rgba(10, 26, 61, 0.12); border-radius: 18px; }
+.svc-panel { margin-top: 20px; padding: 20px; background: var(--surface-2); border: 1px solid var(--line-light); border-radius: 18px; }
 .svc-panel__head { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 14px; }
-.svc-panel__title { margin: 0; color: var(--navy-900); font-size: 1.1rem; }
-.svc-panel__close { padding: 6px 12px; color: var(--navy-900); font-size: 0.82rem; font-weight: 600; background: transparent; border: 1.5px solid rgba(10, 26, 61, 0.3); border-radius: 999px; cursor: pointer; }
-.svc-panel__close:hover { border-color: var(--navy-900); }
+.svc-panel__title { margin: 0; color: var(--ink); font-size: 1.1rem; }
+.svc-panel__close { padding: 6px 12px; color: var(--silver); font-size: 0.82rem; font-weight: 600; background: transparent; border: 1.5px solid rgba(200, 200, 200, 0.35); border-radius: 999px; cursor: pointer; }
+.svc-panel__close:hover { border-color: var(--silver); color: var(--white); }
 .sp-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
 .sp-card {
   display: flex;
@@ -127,16 +103,16 @@ const css = `
   gap: 6px;
   padding: 14px;
   text-align: left;
-  color: var(--navy-900);
+  color: var(--ink);
   font: inherit;
-  background: #fbf9f4;
-  border: 1px solid rgba(10, 26, 61, 0.1);
+  background: rgba(255, 255, 255, 0.035);
+  border: 1px solid var(--line-light);
   border-radius: 14px;
   cursor: pointer;
   transition: transform 0.18s ease, border-color 0.18s ease, background 0.18s ease;
 }
-.sp-card:hover { transform: translateY(-2px); border-color: var(--navy-900); background: #fff; }
-.sp-card__icon { display: grid; place-items: center; width: 34px; height: 34px; background: rgba(10, 26, 61, 0.07); border-radius: 10px; }
+.sp-card:hover { transform: translateY(-2px); border-color: rgba(200, 200, 200, 0.5); background: rgba(255, 255, 255, 0.07); }
+.sp-card__icon { display: grid; place-items: center; width: 34px; height: 34px; background: rgba(200, 200, 200, 0.1); border-radius: 10px; color: var(--silver); }
 .sp-card__title { font-size: 0.92rem; font-weight: 700; line-height: 1.25; }
 .sp-card__text {
   color: var(--ink-soft);
@@ -147,23 +123,21 @@ const css = `
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
-.sp-card__cta { display: inline-flex; align-items: center; gap: 5px; margin-top: auto; padding-top: 4px; font-size: 0.78rem; font-weight: 700; }
+.sp-card__cta { display: inline-flex; align-items: center; gap: 5px; margin-top: auto; padding-top: 4px; font-size: 0.78rem; font-weight: 700; color: var(--silver); }
 
 .svc-all { display: flex; flex-direction: column; align-items: center; gap: 10px; margin-top: 28px; text-align: center; }
-.svc-all .btn--dark {
+.svc-all .btn {
   display: inline-flex;
   align-items: center;
   gap: 8px;
   padding: 12px 22px;
-  color: #fff;
-  font-weight: 600;
-  background: var(--navy-900);
-  border: 0;
+  background: var(--red);
+  border: 1px solid var(--red);
   border-radius: 12px;
   cursor: pointer;
   transition: background 0.18s ease, transform 0.18s ease;
 }
-.svc-all .btn--dark:hover { background: var(--navy-800); transform: translateY(-2px); }
+.svc-all .btn:hover { background: var(--red-hover); transform: translateY(-2px); }
 .svc-all__note { margin: 0; color: var(--ink-soft); font-size: 0.9rem; }
 
 @media (max-width: 1100px) {
@@ -197,21 +171,17 @@ export default function HomeServices() {
           <h2 id="services-heading">
             Everything your business needs, <span className="text-accent">from one team.</span>
           </h2>
-          <p className="section-head__text">IT support, software, AI and business systems.</p>
+          <p className="section-head__text">IT support, software, mobile apps, AI and security.</p>
         </div>
 
         <div className="svc-cats">
-          {serviceCategories.map((category, index) => {
+          {serviceCategories.map((category) => {
             const isOpen = active === category.slug
-            const offer = OFFERS[index % OFFERS.length]
             return (
               <article
                 className={`svc-cat${isOpen ? ' is-active' : ''}`}
                 key={category.slug}
               >
-                <span className={`svc-cat__badge svc-cat__badge--${offer.tone}`}>
-                  {offer.label}
-                </span>
                 <span className="svc-cat__icon" aria-hidden="true">
                   <CategoryIcon name={category.icon} size={24} />
                 </span>
@@ -221,7 +191,7 @@ export default function HomeServices() {
                 <div className="svc-cat__actions">
                   <button
                     type="button"
-                    className="btn btn--primary btn--sm"
+                    className="btn btn--sm svc-view"
                     onClick={() => toggle(category.slug)}
                     aria-expanded={isOpen}
                     aria-controls="svc-panel"
@@ -238,7 +208,7 @@ export default function HomeServices() {
                     className="text-link"
                     onClick={() => openConsultation({ service: category.shortName })}
                   >
-                    Get {offer.label.toLowerCase()}
+                    Ask about this
                   </button>
                 </div>
               </article>
@@ -266,7 +236,7 @@ export default function HomeServices() {
                     aria-label={`Get started with ${service.title}`}
                   >
                     <span className="sp-card__icon" aria-hidden="true">
-                      <Icon size={18} weight="duotone" color="#0a1a3d" />
+                      <Icon size={18} weight="duotone" color="currentColor" />
                     </span>
                     <span className="sp-card__title">{service.title}</span>
                     <span className="sp-card__text">{service.summary}</span>
@@ -284,7 +254,7 @@ export default function HomeServices() {
         <div className="svc-all">
           <button
             type="button"
-            className="btn btn--dark"
+            className="btn"
             onClick={() => toggle('all')}
           >
             {active === 'all' ? 'Hide all services' : `See all ${allServices.length} services`}
