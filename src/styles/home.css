@@ -72,11 +72,11 @@
   width: 100%;
   max-width: 520px;
   padding: clamp(20px, 2.4vw, 28px);
-  border: 1px solid #cfcfcf;
+  border: 1px solid rgba(255, 255, 255, 0.18);
   border-radius: 20px;
-  background: #e2e2e2;
-  color: #111111;
-  box-shadow: 0 28px 70px -30px rgba(0, 0, 0, 0.75);
+  background: #171717;
+  color: #ffffff;
+  box-shadow: 0 28px 70px -30px rgba(0, 0, 0, 0.85);
   --accent: var(--red);
   --accent-soft: rgba(142, 14, 44, 0.12);
   --focus: var(--red);
@@ -88,13 +88,13 @@
 
 .hero-form__head h2 {
   margin-bottom: 8px;
-  color: #111111;
+  color: #ffffff;
   font-size: clamp(1.15rem, 1.7vw, 1.45rem);
   letter-spacing: -0.03em;
 }
 
 .hero-form__head p:not(.eyebrow) {
-  color: #333333;
+  color: #ffffff;
   font-size: 0.86rem;
   line-height: 1.55;
 }
@@ -105,7 +105,7 @@
   background: transparent;
   border: 0;
   box-shadow: none;
-  color: #111111;
+  color: #ffffff;
 }
 
 .hero__consultation-btn {
