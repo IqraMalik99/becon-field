@@ -52,23 +52,37 @@ const css = `
 .about-cta:hover { background: var(--red-hover); border-color: var(--red-hover); transform: translateY(-2px); gap: 12px; }
 
 .about-photo {
+  position: relative;
   display: block;
   width: clamp(150px, 18vw, 230px);
   aspect-ratio: 1 / 1;
-  overflow: hidden;
   background: var(--surface-2);
   border: 1px solid var(--line-light);
   border-radius: 16px;
 }
-.about-photo img {
+.about-photo > img {
   display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
+  border-radius: 15px;
   filter: grayscale(72%) contrast(1.05);
   transition: filter 0.4s ease, transform 0.5s ease;
 }
-.about-photo:hover img { filter: grayscale(0%); transform: scale(1.04); }
+.about-photo:hover > img { filter: grayscale(0%); transform: scale(1.04); }
+.about-photo__mark {
+  position: absolute;
+  right: -10px;
+  bottom: -10px;
+  width: 58px;
+  height: 58px;
+  padding: 3px;
+  background: #000000;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 16px;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.6);
+}
+.about-photo__mark img { display: block; width: 100%; height: 100%; border-radius: 12px; }
 
 @media (max-width: 720px) {
   .about-section__grid { grid-template-columns: 1fr; }
@@ -106,6 +120,9 @@ export default function AboutSection() {
             alt="Senior team collaborating around a table"
             decoding="async"
           />
+          <span className="about-photo__mark" aria-hidden="true">
+            <img src="/favicon.svg" alt="" />
+          </span>
         </Reveal>
       </div>
     </section>

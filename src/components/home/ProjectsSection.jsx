@@ -70,21 +70,46 @@ const css = `
 .project-card:hover { transform: translateY(-4px); border-color: rgba(200, 200, 200, 0.55); box-shadow: 0 18px 38px rgba(0, 0, 0, 0.45); }
 
 .project-card__visual { position: relative; aspect-ratio: 16 / 10; overflow: hidden; background: #0f0f0f; }
-.project-card__visual img { display: block; width: 100%; height: 100%; object-fit: cover; filter: grayscale(1) contrast(1.05) brightness(0.9); transition: transform 0.4s ease, filter 0.4s ease; }
-.project-card:hover .project-card__visual img { transform: scale(1.04); filter: grayscale(0.35) contrast(1.02) brightness(0.98); }
-.project-card__badge {
+.project-card__visual img { display: block; width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease; }
+.project-card:hover .project-card__visual img { transform: scale(1.05); }
+.project-card__visual::after {
+  content: '';
   position: absolute;
-  top: 12px;
-  left: 12px;
-  padding: 4px 11px;
-  color: var(--silver);
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.45) 0%, rgba(0, 0, 0, 0.05) 42%, rgba(0, 0, 0, 0.65) 100%);
+  pointer-events: none;
+}
+.project-card__overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 14px;
+  pointer-events: none;
+}
+.project-card__badge {
+  padding: 5px 11px;
+  color: var(--white);
   font-size: 0.68rem;
-  font-weight: 700;
-  letter-spacing: 0.05em;
+  font-weight: 800;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
-  background: #242424;
-  border: 1px solid rgba(200, 200, 200, 0.22);
+  background: rgba(0, 0, 0, 0.68);
+  border: 1px solid rgba(255, 255, 255, 0.4);
   border-radius: 999px;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+.project-card__overlay-tag {
+  color: var(--white);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
 }
 
 .project-card__body { display: flex; flex: 1; flex-direction: column; gap: 8px; padding: 18px 18px 18px; }
@@ -163,7 +188,10 @@ export default function ProjectsSection() {
                   loading="lazy"
                   decoding="async"
                 />
-               
+                <div className="project-card__overlay">
+                  <span className="project-card__badge">Featured work</span>
+                  <span className="project-card__overlay-tag">{project.tags}</span>
+                </div>
               </div>
               <div className="project-card__body">
                 <p className="project-card__tags">{project.tags}</p>
