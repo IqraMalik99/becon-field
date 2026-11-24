@@ -36,9 +36,9 @@ const projects = [
 /* Inline CSS: one full grey band with silver graphics */
 const css = `
 .projects-section {
-  --navy-900: #f5f5f5;
-  --navy-800: #c8c8c8;
-  --ink-soft: rgba(245, 245, 245, 0.72);
+  --navy-900: #ffffff;
+  --navy-800: #ffffff;
+  --ink-soft: #ffffff;
   padding: clamp(48px, 6vw, 84px) 0;
   color: var(--ink);
   background: #1e1e1e;

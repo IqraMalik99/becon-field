@@ -9,9 +9,9 @@ import { useConsultation } from '../../context/consultationContext.js'
 /* Inline CSS: dark grey section, silver cards, red primary CTA only */
 const css = `
 .onepage-services {
-  --navy-900: #f5f5f5;
-  --navy-800: #c8c8c8;
-  --ink-soft: rgba(245, 245, 245, 0.7);
+  --navy-900: #ffffff;
+  --navy-800: #ffffff;
+  --ink-soft: #ffffff;
   padding: clamp(48px, 6vw, 84px) 0;
   color: var(--ink);
   background: var(--surface);
@@ -59,7 +59,7 @@ const css = `
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
-.svc-cat__meta { margin: 0; color: var(--silver); font-size: 0.78rem; font-weight: 600; opacity: 0.75; }
+.svc-cat__meta { margin: 0; color: var(--silver); font-size: 0.78rem; font-weight: 600; }
 .svc-cat__actions { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-top: auto; padding-top: 6px; }
 .svc-cat .svc-view {
   display: inline-flex;

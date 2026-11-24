@@ -2,7 +2,7 @@
   position: relative;
   overflow: hidden;
   background: var(--dark);
-  color: var(--cream);
+  color: #ffffff;
   padding: clamp(40px, 5.5vw, 64px) 0 clamp(36px, 5vw, 56px);
 }
 
@@ -28,7 +28,7 @@
 
 .hero__lead {
   margin-top: 18px;
-  color: var(--body-dark);
+  color: #ffffff;
   font-size: clamp(0.9rem, 1.15vw, 1rem);
   line-height: 1.7;
   max-width: 500px;
@@ -54,7 +54,7 @@
   gap: 8px;
   font-size: 0.8rem;
   font-weight: 700;
-  color: var(--muted);
+  color: #ffffff;
 }
 
 .hero__points svg {
@@ -95,7 +95,7 @@
 }
 
 .hero-form__head p:not(.eyebrow) {
-  color: var(--body);
+  color: #ffffff;
   font-size: 0.82rem;
   line-height: 1.6;
 }
@@ -106,7 +106,7 @@
 }
 
 .hero__form .form-note {
-  color: var(--body);
+  color: #ffffff;
 }
 
 .hero__consultation-btn {
@@ -154,7 +154,7 @@
   background: var(--dark);
   border-top: 1px solid var(--line-light);
   border-bottom: 1px solid var(--line-light);
-  color: var(--cream);
+  color: #ffffff;
 }
 
 .cap-strip__inner {
@@ -169,7 +169,7 @@
   font-size: 0.68rem;
   text-transform: uppercase;
   letter-spacing: 0.16em;
-  color: var(--muted);
+  color: #ffffff;
   font-weight: 800;
 }
 
@@ -185,7 +185,7 @@
   gap: 7px;
   font-size: 0.8rem;
   font-weight: 700;
-  color: var(--body-dark);
+  color: #ffffff;
 }
 
 .cap-strip svg {
@@ -241,7 +241,7 @@
   font-size: 0.72rem;
   font-weight: 800;
   letter-spacing: 0.14em;
-  color: var(--muted);
+  color: #ffffff;
 }
 
 .cat-card h3 {
@@ -254,7 +254,7 @@
 .cat-card > p {
   font-size: 0.88rem;
   line-height: 1.65;
-  color: var(--body);
+  color: #ffffff;
   margin-bottom: 18px;
 }
 
@@ -268,7 +268,7 @@
 
 .cat-card li {
   font-size: 0.8rem;
-  color: var(--muted);
+  color: #ffffff;
   display: flex;
   gap: 8px;
 }
@@ -284,7 +284,7 @@
 }
 
 .cat-card .cat-card__more {
-  color: var(--muted);
+  color: #ffffff;
 }
 
 .cat-card__link {
@@ -322,7 +322,7 @@
 .problem-row__problem {
   font-size: 0.95rem;
   font-weight: 800;
-  color: var(--cream);
+  color: #ffffff;
 }
 
 .problem-row__arrow {
@@ -333,7 +333,7 @@
 .problem-row__solution {
   font-size: 0.85rem;
   line-height: 1.65;
-  color: var(--body-dark);
+  color: #ffffff;
 }
 
 .problem-row__link {
@@ -442,7 +442,7 @@
 .project-card__body p:not(.project-card__tags) {
   font-size: 0.86rem;
   line-height: 1.7;
-  color: var(--body);
+  color: #ffffff;
 }
 
 .project-card .text-link {
@@ -453,7 +453,7 @@
 .project-note {
   margin-top: 28px;
   font-size: 0.78rem;
-  color: var(--muted);
+  color: #ffffff;
   max-width: 760px;
 }
 
@@ -508,7 +508,7 @@
 .roadmap-step p {
   font-size: 0.72rem;
   line-height: 1.65;
-  color: var(--body-dark);
+  color: #ffffff;
   max-width: 24ch;
 }
 
@@ -598,7 +598,7 @@
 .why-item p {
   font-size: 0.84rem;
   line-height: 1.7;
-  color: var(--body);
+  color: #ffffff;
 }
 
 .tech-list {
@@ -619,7 +619,7 @@
   font-size: 0.8rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--muted);
+  color: #ffffff;
 }
 
 .tech-row ul {
@@ -631,7 +631,7 @@
 .tech-row li {
   font-size: 0.8rem;
   font-weight: 600;
-  color: var(--body-dark);
+  color: #ffffff;
   padding: 8px 13px;
   border: 1px solid var(--line-light);
   border-radius: 999px;
@@ -674,7 +674,7 @@
   line-height: 1.65;
   font-weight: 600;
   letter-spacing: -0.02em;
-  color: var(--primary);
+  color: #ffffff;
 }
 
 .testimonial-card figcaption {
@@ -693,7 +693,7 @@
 
 .testimonial-card figcaption span:last-child {
   font-size: 0.75rem;
-  color: var(--muted);
+  color: #ffffff;
 }
 
 .testimonial-card .text-link {
@@ -779,5 +779,5 @@
   padding: 0 34px 22px 0;
   font-size: 0.9rem;
   line-height: 1.75;
-  color: var(--body);
+  color: #ffffff;
 }

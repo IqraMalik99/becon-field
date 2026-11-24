@@ -7,9 +7,9 @@ import { useConsultation } from '../../context/consultationContext.js'
 /* Inline CSS: dark grey editorial list, silver text, hairline dividers */
 const css = `
 .solutions-section {
-  --navy-900: #f5f5f5;
-  --navy-800: #c8c8c8;
-  --ink-soft: rgba(245, 245, 245, 0.72);
+  --navy-900: #ffffff;
+  --navy-800: #ffffff;
+  --ink-soft: #ffffff;
   --line: rgba(230, 230, 230, 0.14);
   padding: clamp(36px, 5vw, 64px) 0;
   color: var(--ink);

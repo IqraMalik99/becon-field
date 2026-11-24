@@ -625,7 +625,7 @@ export default function Admin() {
                 <Sparkle size={18} weight="fill" />
               </span>
               <span className="brand__text">
-                <strong>BeaconsFields</strong>
+                <strong>Beaconsfields</strong>
                 <small>Admin</small>
               </span>
             </span>
@@ -695,7 +695,7 @@ export default function Admin() {
             <Sparkle size={18} weight="fill" />
           </span>
           <span className="brand__text">
-            <strong>BeaconsFields</strong>
+            <strong>Beaconsfields</strong>
             <small>Consultation inbox</small>
           </span>
         </span>

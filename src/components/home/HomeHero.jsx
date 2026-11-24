@@ -12,14 +12,14 @@ const heroPoints = [
 /* Inline CSS: dark grey hero + silver glassmorphism form (also styles the modal form) */
 const css = `
 :root {
-  --cream: #e6e6e6;
+  --cream: #ffffff;
   --navy-950: #080a0d;
   --navy-900: #0a0a0a;
   --navy-800: #141414;
   --navy-700: #2b333d;
-  --ink: #f5f5f5;
-  --ink-soft: rgba(245, 245, 245, 0.72);
-  --text-soft: rgba(230, 230, 230, 0.75);
+  --ink: #ffffff;
+  --ink-soft: #ffffff;
+  --text-soft: #ffffff;
 }
 
 html, body, #root { background: var(--dark); }
@@ -104,8 +104,8 @@ html, body, #root { background: var(--dark); }
 
 .glass-form .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
 .glass-form .field { display: flex; flex-direction: column; gap: 6px; margin-bottom: 12px; }
-.glass-form label { color: rgba(245, 245, 245, 0.9); font-size: 0.85rem; font-weight: 500; }
-.glass-form .req { color: #ff8a96; }
+.glass-form label { color: #ffffff; font-size: 0.85rem; font-weight: 500; }
+.glass-form .req { color: #ffffff; }
 
 .glass-form input,
 .glass-form select,
@@ -121,7 +121,7 @@ html, body, #root { background: var(--dark); }
   transition: border-color 0.18s ease, background 0.18s ease, box-shadow 0.18s ease;
 }
 .glass-form input::placeholder,
-.glass-form textarea::placeholder { color: rgba(230, 230, 230, 0.5); }
+.glass-form textarea::placeholder { color: #ffffff; }
 .glass-form input:focus,
 .glass-form select:focus,
 .glass-form textarea:focus {
@@ -135,7 +135,7 @@ html, body, #root { background: var(--dark); }
 
 .glass-form .has-error input,
 .glass-form .has-error select { border-color: #ff7a8a; }
-.glass-form .field-error { color: #ff9aa6; font-size: 0.82rem; margin: 0; }
+.glass-form .field-error { color: #ffffff; font-size: 0.82rem; margin: 0; }
 
 .glass-form .form-more {
   display: inline-flex;
@@ -170,8 +170,8 @@ html, body, #root { background: var(--dark); }
 .glass-form .contact-submit:hover:not(:disabled) { transform: translateY(-2px); background: var(--red-hover); }
 .glass-form .contact-submit:disabled { opacity: 0.7; cursor: progress; }
 
-.glass-form .form-note { margin: 12px 0 0; color: rgba(230, 230, 230, 0.6); font-size: 0.8rem; text-align: center; }
-.glass-form .form-alert { margin-bottom: 12px; padding: 12px 14px; color: #ffd9e4; background: rgba(142, 14, 44, 0.14); border: 1px solid rgba(142, 14, 44, 0.38); border-radius: 12px; font-size: 0.9rem; }
+.glass-form .form-note { margin: 12px 0 0; color: #ffffff; font-size: 0.8rem; text-align: center; }
+.glass-form .form-alert { margin-bottom: 12px; padding: 12px 14px; color: #ffffff; background: rgba(142, 14, 44, 0.14); border: 1px solid rgba(142, 14, 44, 0.38); border-radius: 12px; font-size: 0.9rem; }
 .glass-form .form-alert a { color: #fff; }
 .glass-form .request-notice { display: flex; gap: 8px; margin-bottom: 12px; padding: 10px 12px; color: var(--text-soft); background: rgba(200, 200, 200, 0.09); border-radius: 12px; font-size: 0.9rem; }
 .hp-field { position: absolute; left: -9999px; }
@@ -194,7 +194,7 @@ html, body, #root { background: var(--dark); }
 .hero__form .hero-form__head h2 { margin: 0 0 4px; font-size: 1.2rem; color: var(--ink); }
 .hero__form .hero-form__head p { font-size: 0.85rem; line-height: 1.45; color: var(--ink-soft); }
 .hero__form label { color: var(--ink); font-size: 0.8rem; }
-.hero__form .req { color: #ff8a96; }
+.hero__form .req { color: #ffffff; }
 .hero__form .field { gap: 4px; margin-bottom: 9px; }
 .hero__form input,
 .hero__form select,
@@ -207,7 +207,7 @@ html, body, #root { background: var(--dark); }
   border-radius: 10px;
 }
 .hero__form input::placeholder,
-.hero__form textarea::placeholder { color: rgba(230, 230, 230, 0.45); }
+.hero__form textarea::placeholder { color: #ffffff; }
 .hero__form input:focus,
 .hero__form select:focus,
 .hero__form textarea:focus {
@@ -219,10 +219,10 @@ html, body, #root { background: var(--dark); }
 .hero__form input[type='date'],
 .hero__form input[type='time'] { color-scheme: dark; }
 .hero__form .form-more { color: var(--silver); font-size: 0.84rem; margin-bottom: 9px; }
-.hero__form .field-error { color: #ff8a96; }
+.hero__form .field-error { color: #ffffff; }
 .hero__form .has-error input,
 .hero__form .has-error select { border-color: #ff7a8a; }
-.hero__form .form-alert { color: #ffc2d1; background: rgba(142, 14, 44, 0.12); border-color: rgba(142, 14, 44, 0.35); }
+.hero__form .form-alert { color: #ffffff; background: rgba(142, 14, 44, 0.12); border-color: rgba(142, 14, 44, 0.35); }
 .hero__form .form-alert a { color: var(--ink); }
 .hero__form .contact-submit {
   padding: 11px 16px;
@@ -233,11 +233,11 @@ html, body, #root { background: var(--dark); }
   box-shadow: 0 8px 20px rgba(142, 14, 44, 0.25);
 }
 .hero__form .contact-submit:hover:not(:disabled) { background: var(--red-hover); }
-.hero__form .form-note { margin-top: 9px; font-size: 0.74rem; color: rgba(230, 230, 230, 0.6); }
+.hero__form .form-note { margin-top: 9px; font-size: 0.74rem; color: #ffffff; }
 
 /* ---------- CAPABILITY STRIP: dark surface, silver text ---------- */
 .cap-strip {
-  color: var(--cream);
+  color: #ffffff;
   background: var(--surface);
   border-top: 1px solid rgba(230, 230, 230, 0.12);
   border-bottom: 1px solid rgba(230, 230, 230, 0.12);

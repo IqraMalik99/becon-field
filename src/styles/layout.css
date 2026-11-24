@@ -30,7 +30,7 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  color: var(--cream);
+  color: #ffffff;
   flex: 0 0 auto;
 }
 
@@ -61,7 +61,7 @@
   font-size: 0.6rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--muted);
+  color: #ffffff;
   font-weight: 700;
   margin-top: 3px;
 }
@@ -90,7 +90,7 @@
 }
 
 .nav-link:hover {
-  color: var(--cream);
+  color: #ffffff;
   background: rgba(230, 230, 230, 0.06);
 }
 
@@ -129,7 +129,7 @@
   left: 50%;
   translate: -50% -8px;
   width: min(1080px, calc(100vw - 48px));
-  background: var(--cream);
+  background: var(--surface-2);
   color: var(--ink);
   border-radius: 24px;
   padding: 18px;
@@ -194,7 +194,7 @@
 
 .services-menu__copy small {
   font-size: 0.72rem;
-  color: var(--muted);
+  color: #ffffff;
   font-weight: 600;
 }
 
@@ -210,12 +210,12 @@
 
 .services-menu__foot p {
   font-size: 0.8rem;
-  color: var(--body);
+  color: #ffffff;
   max-width: 520px;
 }
 
 .services-menu__foot p span {
-  color: var(--muted);
+  color: #ffffff;
 }
 
 .services-menu__actions {
@@ -238,7 +238,7 @@
   border-radius: 12px;
   border: 1px solid rgba(230, 230, 230, 0.18);
   background: transparent;
-  color: var(--cream);
+  color: #ffffff;
   place-items: center;
 }
 
@@ -279,7 +279,7 @@
   border: 0;
   border-bottom: 1px solid var(--line-light);
   background: none;
-  color: var(--cream);
+  color: #ffffff;
   font-size: 1.18rem;
   font-weight: 800;
   letter-spacing: -0.02em;
@@ -300,7 +300,7 @@
 
 .mobile-nav__sublink {
   padding: 9px 0;
-  color: var(--body-dark);
+  color: #ffffff;
   font-size: 0.94rem;
   font-weight: 600;
 }
@@ -317,13 +317,13 @@
 .mobile-nav__email {
   margin-top: 18px;
   text-align: center;
-  color: var(--muted);
+  color: #ffffff;
   font-size: 0.9rem;
 }
 
 .site-footer {
   background: var(--dark);
-  color: var(--cream);
+  color: #ffffff;
   padding: clamp(56px, 7vw, 88px) 0 28px;
   border-top: 1px solid rgba(230, 230, 230, 0.08);
 }
@@ -336,7 +336,7 @@
 
 .footer-brand p {
   margin: 20px 0;
-  color: var(--body-dark);
+  color: #ffffff;
   font-size: 0.9rem;
   line-height: 1.7;
   max-width: 320px;
@@ -355,7 +355,7 @@
   font-size: 0.74rem;
   text-transform: uppercase;
   letter-spacing: 0.14em;
-  color: var(--muted);
+  color: #ffffff;
   font-weight: 800;
   margin-bottom: 16px;
 }
@@ -366,7 +366,7 @@
 }
 
 .footer-col ul a {
-  color: var(--body-dark);
+  color: #ffffff;
   font-size: 0.9rem;
   transition: color 0.2s;
 }
@@ -380,7 +380,7 @@
 }
 
 .footer-col--cta p {
-  color: var(--body-dark);
+  color: #ffffff;
   font-size: 0.88rem;
   line-height: 1.7;
   margin-bottom: 18px;
@@ -394,7 +394,7 @@
   justify-content: space-between;
   gap: 16px;
   flex-wrap: wrap;
-  color: var(--muted);
+  color: #ffffff;
   font-size: 0.78rem;
 }
 
@@ -402,7 +402,7 @@
   position: relative;
   overflow: hidden;
   background: var(--dark);
-  color: var(--cream);
+  color: #ffffff;
   padding: clamp(40px, 5.5vw, 72px) 0 clamp(36px, 5vw, 60px);
 }
 
@@ -422,13 +422,13 @@
   flex-wrap: wrap;
   gap: 7px;
   margin-bottom: 18px;
-  color: var(--muted);
+  color: #ffffff;
   font-size: 0.74rem;
   font-weight: 600;
 }
 
 .breadcrumb a {
-  color: var(--muted);
+  color: #ffffff;
   transition: color 0.2s;
 }
 
@@ -449,7 +449,7 @@
 .page-hero__text {
   margin-top: 16px;
   max-width: 640px;
-  color: var(--body-dark);
+  color: #ffffff;
   font-size: 0.93rem;
   line-height: 1.7;
 }
@@ -467,7 +467,7 @@
   background:
     var(--dark)
     url('/images/cta-mountains.webp') center 58% / cover no-repeat;
-  color: var(--cream);
+  color: #ffffff;
   border-top: 1px solid var(--line-light);
   border-bottom: 1px solid var(--line-light);
 }
@@ -493,7 +493,7 @@
 }
 
 .cta-band .eyebrow--pill {
-  color: var(--cream);
+  color: #ffffff;
 }
 
 .cta-band h2 {

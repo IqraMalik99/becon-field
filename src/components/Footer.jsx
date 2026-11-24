@@ -10,7 +10,7 @@ const year = new Date().getFullYear()
 /* Inline CSS: dark grey footer + silver glass "Start a project" card */
 const css = `
 .site-footer {
-  color: var(--body-dark);
+  color: #ffffff;
   background: #000000;
   border-top: 1px solid rgba(200, 200, 200, 0.12);
   padding: clamp(32px, 4vw, 52px) 0 20px;
@@ -27,7 +27,7 @@ const css = `
 /* Email and phone contact options */
 .site-footer .footer-emails { display: grid; gap: 7px; margin: 4px 0 18px; }
 .site-footer .footer-emails__label {
-  color: var(--muted);
+  color: #ffffff;
   font-size: 0.72rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -53,7 +53,7 @@ const css = `
   text-transform: uppercase;
 }
 .site-footer ul { margin: 0; padding: 0; list-style: none; display: grid; gap: 10px; }
-.site-footer a { color: var(--body-dark); text-decoration: none; transition: color 0.18s ease; }
+.site-footer a { color: #ffffff; text-decoration: none; transition: color 0.18s ease; }
 .site-footer a:hover { color: var(--white); }
 
 /* Glass card */
@@ -91,7 +91,7 @@ const css = `
   padding-top: 16px;
   border-top: 1px solid rgba(200, 200, 200, 0.12);
   font-size: 0.85rem;
-  color: var(--muted);
+  color: #ffffff;
 }
 .site-footer .footer-bottom p { margin: 0; }
 

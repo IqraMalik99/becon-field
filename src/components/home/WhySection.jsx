@@ -14,7 +14,7 @@ export default function WhySection() {
       <div className="container why-grid">
         <div className="why-copy">
           <SectionHeading
-            eyebrow="Why BeaconsFields"
+            eyebrow="Why Beaconsfields"
             title="Technical depth, without the usual agency distance."
             text="Small enough that the person who scopes your work stays close to it — broad enough to handle the infrastructure, software, and automation around it."
           />

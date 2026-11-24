@@ -40,7 +40,7 @@
 
 .modal__head p:not(.eyebrow) {
   max-width: 520px;
-  color: var(--body);
+  color: #ffffff;
   font-size: 0.88rem;
   line-height: 1.65;
 }
@@ -54,10 +54,10 @@
   width: 40px;
   height: 40px;
   padding: 0;
-  border: 1px solid var(--line);
+  border: 1px solid var(--line-light);
   border-radius: 50%;
-  background: var(--cream);
-  color: var(--primary);
+  background: var(--surface-3);
+  color: #ffffff;
   transition:
     background 0.2s,
     border-color 0.2s,

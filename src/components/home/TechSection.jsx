@@ -5,16 +5,16 @@ import { techGroups } from '../../data/site.js'
 const css = `
 .tech-section {
   --navy-900: #0a0a0a;
-  --cream: #e6e6e6;
+  --cream: #ffffff;
   padding: clamp(32px, 4vw, 52px) 0;
-  color: var(--cream);
+  color: #ffffff;
   background: var(--navy-900);
   border-top: 1px solid rgba(230, 230, 230, 0.1);
 }
-.tech-section h2 { margin: 6px 0 4px; color: var(--cream); font-size: clamp(1.4rem, 2.8vw, 2rem); line-height: 1.15; letter-spacing: -0.02em; }
+.tech-section h2 { margin: 6px 0 4px; color: #ffffff; font-size: clamp(1.4rem, 2.8vw, 2rem); line-height: 1.15; letter-spacing: -0.02em; }
 .tech-section .eyebrow,
 .tech-section .eyebrow--pill {
-  color: var(--cream);
+  color: #ffffff;
   font-weight: 600;
   letter-spacing: 0.08em;
   background: rgba(230, 230, 230, 0.08);
@@ -24,7 +24,7 @@ const css = `
 .tech-section [class*='heading'],
 .tech-section .section-head { margin-bottom: 0; }
 .tech-section [class*='heading'] p,
-.tech-section .section-head__text { margin: 0; color: rgba(230, 230, 230, 0.72); font-size: 0.95rem; }
+.tech-section .section-head__text { margin: 0; color: #ffffff; font-size: 0.95rem; }
 
 .tech-chips {
   display: grid;
@@ -56,7 +56,7 @@ const css = `
 .tech-chip__items { display: flex; flex-wrap: wrap; gap: 6px; }
 .tech-tag {
   padding: 3px 10px;
-  color: var(--cream);
+  color: #ffffff;
   font-size: 0.8rem;
   font-weight: 500;
   background: rgba(230, 230, 230, 0.09);

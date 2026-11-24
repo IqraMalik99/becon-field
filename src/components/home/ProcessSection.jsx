@@ -7,11 +7,11 @@ import { processSteps } from '../../data/site.js'
 const css = `
 .process-section {
   --navy-900: #0a0a0a;
-  --cream: #e6e6e6;
+  --cream: #ffffff;
   --orange: #8e0e2c;
   --circle: 40px;
   padding: clamp(40px, 5vw, 72px) 0;
-  color: var(--cream);
+  color: #ffffff;
   background: var(--navy-900);
 }
 .process-layout {
@@ -23,10 +23,10 @@ const css = `
 
 /* Left: stays in place while you scroll */
 .process-side { position: sticky; top: 110px; }
-.process-section h2 { margin: 8px 0 8px; color: var(--cream); font-size: clamp(1.6rem, 3vw, 2.3rem); line-height: 1.12; letter-spacing: -0.02em; }
+.process-section h2 { margin: 8px 0 8px; color: #ffffff; font-size: clamp(1.6rem, 3vw, 2.3rem); line-height: 1.12; letter-spacing: -0.02em; }
 .process-section .eyebrow,
 .process-section .eyebrow--pill {
-  color: var(--cream);
+  color: #ffffff;
   font-weight: 600;
   letter-spacing: 0.08em;
   background: rgba(230, 230, 230, 0.08);
@@ -34,7 +34,7 @@ const css = `
 }
 .process-section .eyebrow__dot { background: var(--orange); }
 .process-section [class*='heading'] p,
-.process-section .section-head__text { margin: 0; color: rgba(230, 230, 230, 0.75); font-size: 1rem; line-height: 1.55; }
+.process-section .section-head__text { margin: 0; color: #ffffff; font-size: 1rem; line-height: 1.55; }
 .process-side .section-head,
 .process-side [class*='heading'] { text-align: left; margin: 0; }
 
@@ -62,7 +62,7 @@ const css = `
   transition: opacity 0.5s ease, transform 0.5s ease;
 }
 .tl-step:last-child { padding-bottom: 0; }
-.tl-step.is-visible { opacity: 0.5; transform: none; }
+.tl-step.is-visible { opacity: 1; transform: none; }
 .tl-step.is-active { opacity: 1; }
 
 .tl-step__circle {
@@ -73,7 +73,7 @@ const css = `
   flex-shrink: 0;
   width: var(--circle);
   height: var(--circle);
-  color: var(--cream);
+  color: #ffffff;
   font-size: 0.88rem;
   font-weight: 800;
   background: var(--navy-900);
@@ -81,12 +81,12 @@ const css = `
   border-radius: 50%;
   transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
 }
-.tl-step.is-done .tl-step__circle { color: var(--navy-900); background: var(--cream); border-color: var(--cream); }
+.tl-step.is-done .tl-step__circle { color: #fff; background: var(--red); border-color: var(--red); }
 .tl-step.is-active .tl-step__circle { color: #fff; background: var(--orange); border-color: var(--orange); transform: scale(1.12); box-shadow: 0 0 0 6px rgba(142, 14, 44, 0.22); }
 
 .tl-step__body { padding-top: 2px; }
-.tl-step h3 { margin: 0 0 4px; color: var(--cream); font-size: 1.08rem; font-weight: 700; line-height: 1.25; }
-.tl-step p { margin: 0; max-width: 32rem; color: rgba(230, 230, 230, 0.75); font-size: 0.92rem; line-height: 1.5; }
+.tl-step h3 { margin: 0 0 4px; color: #ffffff; font-size: 1.08rem; font-weight: 700; line-height: 1.25; }
+.tl-step p { margin: 0; max-width: 32rem; color: #ffffff; font-size: 0.92rem; line-height: 1.5; }
 
 @media (max-width: 900px) {
   .process-layout { grid-template-columns: 1fr; gap: 28px; }
