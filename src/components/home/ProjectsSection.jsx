@@ -110,17 +110,17 @@ const css = `
   gap: 8px;
   margin-top: auto;
   padding: 9px 16px;
-  color: var(--silver);
+  color: #ffffff;
   font: inherit;
   font-size: 0.85rem;
-  font-weight: 600;
-  background: #242424;
-  border: 1px solid rgba(200, 200, 200, 0.25);
+  font-weight: 700;
+  background: var(--red);
+  border: 1px solid var(--red);
   border-radius: 10px;
   cursor: pointer;
-  transition: background 0.18s ease, gap 0.18s ease;
+  transition: background 0.18s ease, gap 0.18s ease, transform 0.18s ease;
 }
-.project-card__cta:hover { background: rgba(200, 200, 200, 0.18); color: #ffffff; gap: 12px; }
+.project-card__cta:hover { background: var(--red-hover); border-color: var(--red-hover); color: #ffffff; gap: 12px; transform: translateY(-2px); }
 .project-card__body .project-card__cta { margin-top: 10px; }
 
 .project-note { max-width: 40rem; margin: 28px auto 0; color: var(--ink-soft); font-size: 0.85rem; text-align: center; }

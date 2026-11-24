@@ -9,19 +9,29 @@
       <stop offset="0.6" stop-color="#202020" />
       <stop offset="1" stop-color="#0a0a0a" />
     </linearGradient>
-    <linearGradient id="silver" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#ffffff" />
-      <stop offset="0.35" stop-color="#a8a8a8" />
-      <stop offset="0.65" stop-color="#d8d8d8" />
-      <stop offset="1" stop-color="#7a7a7a" />
+    <linearGradient id="red" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#e11d48" />
+      <stop offset="0.5" stop-color="#c4123a" />
+      <stop offset="1" stop-color="#8e0e2c" />
     </linearGradient>
+    <radialGradient id="glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="1" />
+      <stop offset="0.35" stop-color="#ffffff" stop-opacity="0.55" />
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0" />
+    </radialGradient>
   </defs>
   <rect width="64" height="64" rx="16" fill="url(#black)" />
   <path d="M34 10h10a10 10 0 0 1 10 10v18a10 10 0 0 1-10 10H34a9 9 0 0 0 9-9V19a9 9 0 0 0-9-9Z" fill="url(#grey)" opacity="0.75" />
-  <path d="M32 12 18 51l14-6 14 6-14-39Z" fill="url(#silver)" />
-  <path d="M32 12 18 51l4-1 14-38-4 0Z" fill="#ffffff" opacity="0.22" />
-  <path d="M32 12v33l14 6-14-39Z" fill="#666666" opacity="0.4" />
-  <circle cx="32" cy="12" r="3" fill="url(#silver)" />
-  <path d="M10 51h44" stroke="#b5b5b5" stroke-width="2" stroke-linecap="round" opacity="0.85" />
-  <path d="M18 57h28" stroke="#8c8c8c" stroke-width="1.5" stroke-linecap="round" opacity="0.6" />
+  <circle cx="32" cy="12" r="11" fill="url(#glow)" opacity="0.9" />
+  <g stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" opacity="0.95">
+    <path d="M32 2v4" />
+    <path d="M21 6l3 3" />
+    <path d="M43 6l-3 3" />
+  </g>
+  <path d="M32 12 18 51l14-6 14 6-14-39Z" fill="url(#red)" />
+  <path d="M32 12 18 51l4-1 14-38-4 0Z" fill="#ffffff" opacity="0.3" />
+  <path d="M32 12v33l14 6-14-39Z" fill="#8e0e2c" opacity="0.45" />
+  <circle cx="32" cy="12" r="3" fill="#ffffff" />
+  <path d="M10 51h44" stroke="url(#red)" stroke-width="2" stroke-linecap="round" />
+  <path d="M18 57h28" stroke="#c4123a" stroke-width="1.5" stroke-linecap="round" opacity="0.65" />
 </svg>

@@ -123,7 +123,8 @@ const css = `
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
-.sp-card__cta { display: inline-flex; align-items: center; gap: 5px; margin-top: auto; padding-top: 4px; font-size: 0.78rem; font-weight: 700; color: var(--silver); }
+.sp-card__cta { display: inline-flex; align-items: center; align-self: flex-start; gap: 5px; margin-top: auto; padding: 6px 10px; font-size: 0.78rem; font-weight: 700; color: #ffffff; background: var(--red); border-radius: 8px; transition: background 0.18s ease; }
+.sp-card:hover .sp-card__cta { background: var(--red-hover); }
 
 .svc-all { display: flex; flex-direction: column; align-items: center; gap: 10px; margin-top: 28px; text-align: center; }
 .svc-all .btn {
