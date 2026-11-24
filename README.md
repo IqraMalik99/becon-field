@@ -1,6 +1,6 @@
-# Beaconsfields
+# Beaconsfield
 
-A responsive React website for Beaconsfields, covering IT support, web and
+A responsive React website for Beaconsfield, covering IT support, web and
 software development, mobile apps, AI automation, and cybersecurity and maintenance.
 
 ## Run locally

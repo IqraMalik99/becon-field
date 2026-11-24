@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="320" height="96" viewBox="0 0 320 96" role="img" aria-labelledby="title">
-  <title id="title">Beaconsfields</title>
+  <title id="title">Beaconsfield</title>
   <defs>
     <linearGradient id="black" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0" stop-color="#111111" />
@@ -41,5 +41,5 @@
   <path d="M26 82h40" stroke="#8c8c8c" stroke-width="1.5" stroke-linecap="round" opacity="0.6" />
 
   <!-- Wordmark only -->
-  <text x="104" y="60" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="34" font-weight="800" letter-spacing="-1.4" fill="#a51335">Beaconsfields</text>
+  <text x="104" y="60" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="34" font-weight="800" letter-spacing="-1.4" fill="#a51335">Beaconsfield</text>
 </svg>

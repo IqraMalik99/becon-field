@@ -34,12 +34,12 @@ const css = `
 
 export default function Logo() {
   return (
-    <a href="#top" className="logo" aria-label="Beaconsfields home">
+    <a href="#top" className="logo" aria-label="Beaconsfield home">
       <style>{css}</style>
       <img
         className="logo__mark"
         src="/images/logo-black-grey.svg"
-        alt="Beaconsfields"
+        alt="Beaconsfield"
         width="148"
         height="44"
       />

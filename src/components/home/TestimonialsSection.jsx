@@ -26,7 +26,7 @@ export default function TestimonialsSection() {
             </p>
           </blockquote>
           <figcaption>
-            <span>Beaconsfields</span>
+            <span>Beaconsfield</span>
             <span>Our commitment to how references are shared</span>
           </figcaption>
           <button
